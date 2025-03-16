@@ -29,22 +29,13 @@ function App() {
           transition={{ duration: 1 }}
         />
 
-        {/* Main Text */}
-        <motion.h1
-          className="text-6xl font-bold"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          TEDxNERIST
-        </motion.h1>
         <motion.h2
           className="text-3xl mt-2"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
         >
-          Theme: Lighthouse Apus
+          Lighthouse Apus
         </motion.h2>
         <motion.p
           className="text-lg mt-2 italic"
