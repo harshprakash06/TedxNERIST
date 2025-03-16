@@ -13,6 +13,14 @@ function App() {
       <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white text-center">
         {/* Logo */}
         <motion.img
+          src="/logo.svg" // Ensure this file is in the public folder
+          alt="TEDxNERIST Logo"
+          className="w-60 mb-6" // Increased size
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+        />
+        <motion.img
           src="/logo_wl.webp" // Ensure this file is in the public folder
           alt="TEDxNERIST Logo"
           className="w-60 mb-6" // Increased size
