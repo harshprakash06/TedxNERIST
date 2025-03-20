@@ -1,5 +1,5 @@
 import React from "react";
-import { speakers } from "@/data/speakers";
+import { speakers } from "";
 
 const Speaker = ({ speaker }) => {
   return (

@@ -1,0 +1,54 @@
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  label {
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  button:disabled {
+    background: gray;
+    cursor: not-allowed;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    text-align: left;
+  }
+  

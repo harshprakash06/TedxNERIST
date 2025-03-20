@@ -10,12 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mobiscroll/react": "npm:@mobiscroll/react-next-trial@^5.33.2",
     "@tailwindcss/vite": "^4.0.13",
     "framer-motion": "^12.5.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.1",
     "npx": "^10.2.2",
+    "qrious": "^4.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.3.0"
+    "react-router-dom": "^7.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

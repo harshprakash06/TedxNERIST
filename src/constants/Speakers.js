@@ -33,7 +33,7 @@ export const speakers = [
     category: "Motivation",
   },
 ];
-
+export default speakers;
 // const speakers = {
 //   id: "",
 //   name: "",
