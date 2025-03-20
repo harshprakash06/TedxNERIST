@@ -1,11 +1,18 @@
 import React, { useState } from "react";
-
+import StarCluster from "./StarCluster";
+import ApusConstellation from "./ApusConstellation";
+import "../css/Hero.css";
 const Hero = () => {
+  function isPhone() {
+    return screen.width <= 800;
+  }
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div style={{ backgroundColor: "#1b1b1b" }}>
+    <div style={{}}>
+      <StarCluster />
       {/* Hero Section */}
+
       <section className="relative pt-12 overflow-hidden sm:pt-16">
         <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-4xl mx-auto text-center">
@@ -16,14 +23,24 @@ const Hero = () => {
                   alt="TEDxNERIST Logo"
                   className="h-26 w-auto mb-4"
                 />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500 text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl">
-                  TEDxNERIST
+                <span className="text-white text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl">
+                  The indomitable spirit
                 </span>
               </div>
             </p>
-            <h1 className="mt-8 font-normal text-white !text-5xl sm:!text-6xl md:!text-7xl lg:!text-8xl xl:!text-9xl">
-              Lighthouse <br /> Apus
-            </h1>
+            {console.log(isPhone())}
+            {isPhone() ? (
+              <h1 className="mt-8 font-normal text-white !text-5xl sm:!text-6xl md:!text-7xl lg:!text-8xl xl:!text-9xl">
+                Lighthouse <br /> Apus
+              </h1>
+            ) : (
+              <h1 className="mt-8 font-normal text-white !text-5xl sm:!text-6xl md:!text-7xl lg:!text-8xl xl:!text-9xl">
+                <span className="outline-text">L</span>ightho
+                <span className="outline-text">u</span>se <br />
+                <span className="outline-text">A</span>pus
+                <ApusConstellation />
+              </h1>
+            )}
 
             <div className="flex flex-col items-center justify-center px-8 mt-12 space-y-5 sm:space-y-0 sm:px-0 sm:space-x-5 sm:flex-row">
               <div className="relative inline-flex items-center justify-center w-full sm:w-auto group">

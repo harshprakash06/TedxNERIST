@@ -6,6 +6,6 @@
     --tedxred :#eb0028;
 }
 body{
-    background-color: var(--background);
-    color: var(--text);
+    background-color: #101820;
+        color: var(--text);
 }

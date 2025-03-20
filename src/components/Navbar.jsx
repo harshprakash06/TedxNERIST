@@ -9,14 +9,14 @@ const Navbar = () => {
     { label: "Team", href: "/team" },
     { label: "Support", href: "/support" },
   ];
+  function isPhone() {
+    return screen.width <= 800;
+  }
 
   return (
     <>
       {/* Navbar */}
-      <header
-        className="py-4 bg-black sm:py-6"
-        style={{ backgroundColor: "#1b1b1b" }}
-      >
+      <header className={`py-4 sm:py-6 ${isPhone() ? "-" : ""}`}>
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="shrink-0">
@@ -69,18 +69,18 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden space-x-10 md:flex md:items-center md:justify-center lg:space-x-12">
-              {navItems.map((item) => (
+              {["Home", "Speakers", "Team", "Support"].map((label) => (
                 <a
-                  key={item.label}
-                  href={item.href}
+                  key={label}
+                  href={`/${label.toLowerCase()}`}
                   className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
                 >
-                  {item.label}
+                  {label}
                 </a>
               ))}
             </nav>
 
-            {/* Start Free Trial Button */}
+            {/* Book Tickets Button */}
             <div className="relative hidden md:inline-flex group">
               <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"></div>
               <a
@@ -96,13 +96,13 @@ const Navbar = () => {
           {/* Mobile Navigation (Toggled) */}
           {expanded && (
             <nav className="pt-8 pb-4 space-y-6">
-              {navItems.map((item) => (
+              {["Home", "Speakers", "Team", "Support"].map((label) => (
                 <a
-                  key={item.label}
-                  href={item.href}
+                  key={label}
+                  href={`/${label.toLowerCase()}`}
                   className="block text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
                 >
-                  {item.label}
+                  {label}
                 </a>
               ))}
 
