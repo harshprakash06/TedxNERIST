@@ -4,6 +4,13 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Cirka';
+    src: url('/fonts/PPCirka-Variable.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 @import "tailwindcss";
 :root {
     --background : #161616;
@@ -11,6 +18,7 @@
     --textred : hsl(9, 71%, 44%);
     --tedxred :#eb0028;
     --headerfonr : 'Gilroy';
+    --textfont : 'Cirka';
 }
 body {
     background-color: #161616;

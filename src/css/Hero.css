@@ -1,4 +1,26 @@
-.outline-text {
-    color: transparent;
-    -webkit-text-stroke: 2px white; /* White outline */
-  }
+.container-hero {
+  background-image: url("/background.svg");
+  width: 100wh; /* 100% of viewport width */
+  height: 90vh; /* 100% of viewport height */
+  background-size: contain; /* Ensures the whole image is visible */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image in the container */
+}
+
+.container-about {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically (if given height) */
+  text-align: center;
+  height: 10vh; /* Adjust based on spacing needs */
+}
+
+.hero-header {
+  font-family: Cirka;
+  color: linear-gradient(180deg, #EBEBEB 58.51%, #342B44 90.21%);
+  background: linear-gradient(180deg, #EBEBEB 58.51%, #342B44 90.21%);
+
+  font-weight: 700;
+  font-size: 47px; /* Fixed "size" to "font-size" */
+  color: white; /* Adjust as needed */
+}

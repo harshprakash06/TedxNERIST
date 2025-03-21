@@ -24,7 +24,6 @@ function App() {
           path="/home"
           element={
             <>
-              <Navbar />
               <Hero />
             </>
           }
