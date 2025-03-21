@@ -1,0 +1,61 @@
+.custom-button {
+    display: flex;
+    width: 112px;
+    height: 48px;
+    padding: 16px 20px;
+    align-items: center;
+    gap: 6px;
+    border-radius: 30px;
+    background: #ebebeb;
+    color: #eb0028;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease-out, color 0.3s ease-out;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+.custom-button .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+  .custom-button .arrow-icon {
+    position: absolute;
+    right: -40px; /* Initially hidden */
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+  }
+  
+  .custom-button:hover {
+    background: #eb0028;
+    color: white;
+  }
+  
+  .custom-button:hover .text {
+    opacity: 0;
+  }
+  
+  .custom-button:hover .arrow-icon {
+    opacity: 1;
+    right: 50%;
+    transform: translateX(50%) scale(1.5); /* Enlarge arrow */
+  }
+
+
+.header{
+    font-family: var(--headerfonr), sans-serif;
+
+  }
+
+
+.logo{
+    height: 50px;
+    width: 211px;
+    margin-left: 20px;
+}

@@ -1,11 +1,19 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 @import "tailwindcss";
 :root {
-    --background : #1b1b1b;
+    --background : #161616;
     --text : #eae9e9;
-    --textred : #c13a21;
+    --textred : hsl(9, 71%, 44%);
     --tedxred :#eb0028;
+    --headerfonr : 'Gilroy';
 }
-body{
-    background-color: #101820;
-        color: var(--text);
+body {
+    background-color: #161616;
+    color: var(--text);
+    font-weight: 400;
 }

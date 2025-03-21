@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "../css/Navbar.css";
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
 
@@ -8,6 +8,7 @@ const Navbar = () => {
     { label: "Speakers", href: "/speakers" },
     { label: "Team", href: "/team" },
     { label: "Support", href: "/support" },
+    { label: "nn", href: "/support" },
   ];
   function isPhone() {
     return screen.width <= 800;
@@ -16,12 +17,12 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <header className={`py-4 sm:py-6 ${isPhone() ? "-" : ""}`}>
+      <header className={`py-4 sm:py-6 ${isPhone() ? "-" : ""} header`}>
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="shrink-0">
               <a href="#" title="" className="flex">
-                <img className="w-auto h-9" src="/logo_wl.webp" alt="Logo" />
+                <img className="w-auto logo" src="/logo_wl.webp" alt="Logo" />
               </a>
             </div>
 
@@ -68,8 +69,8 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden space-x-10 md:flex md:items-center md:justify-center lg:space-x-12">
-              {["Home", "Speakers", "Team", "Support"].map((label) => (
+            <nav className="hidden space-x-10 md:flex md:items-center md:justify-center lg:space-x-16">
+              {["Home", "About", "Speaker", "Partner", "Team"].map((label) => (
                 <a
                   key={label}
                   href={`/${label.toLowerCase()}`}
@@ -81,22 +82,18 @@ const Navbar = () => {
             </nav>
 
             {/* Book Tickets Button */}
-            <div className="relative hidden md:inline-flex group">
-              <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"></div>
-              <a
-                href="/buyticket"
-                className="relative inline-flex items-center justify-center px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"
-                role="button"
-              >
-                Book Tickets
+            <div className="hidden md:inline-flex items-center">
+              <a href="/buyticket" className="custom-button">
+                <span className="text">Book Now →</span>
+                <img src={"/arrow.svg"} alt="Arrow" className="arrow-icon" />
               </a>
             </div>
           </div>
 
           {/* Mobile Navigation (Toggled) */}
           {expanded && (
-            <nav className="pt-8 pb-4 space-y-6">
-              {["Home", "Speakers", "Team", "Support"].map((label) => (
+            <nav className="pt-8 pb-4 space-y-8">
+              {["Home", "About", "Speaker", "Partner", "Team"].map((label) => (
                 <a
                   key={label}
                   href={`/${label.toLowerCase()}`}

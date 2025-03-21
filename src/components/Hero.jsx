@@ -10,7 +10,6 @@ const Hero = () => {
 
   return (
     <div style={{}}>
-      <StarCluster />
       {/* Hero Section */}
 
       <section className="relative pt-12 overflow-hidden sm:pt-16">
