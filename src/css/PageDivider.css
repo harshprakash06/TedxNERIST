@@ -1,0 +1,6 @@
+.page-divider {
+  width: 100%;
+  height: 1px;
+  border: 1px;
+  background: linear-gradient(to right, #1b1b1b, #ffffff, #1b1b1b);
+}
