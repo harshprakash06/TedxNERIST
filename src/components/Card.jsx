@@ -2,9 +2,9 @@ import React from "react";
 
 const Card = ({ title, subtitle, description, subdescription }) => {
   return (
-    <div className="container-card">
+    <div className="container-card ">
       <img />
-      <h1 className="text-3xl font-bold card-title">
+      <h1 className="text-3xl font-bold card-title ">
         {title}
         <span className="text-black">{subtitle}</span>
       </h1>
