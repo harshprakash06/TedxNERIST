@@ -21,7 +21,7 @@ const Navbar = () => {
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="shrink-0">
-              <a href="#" title="" className="flex">
+              <a href="/" title="" className="flex">
                 <img className="w-auto logo" src="/logo_wl.webp" alt="Logo" />
               </a>
             </div>

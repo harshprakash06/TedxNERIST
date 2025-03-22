@@ -4,6 +4,19 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: url('/fonts/Gilroy-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
     font-family: 'Cirka';
@@ -19,9 +32,22 @@
     --tedxred :#eb0028;
     --headerfonr : 'Gilroy';
     --textfont : 'Cirka';
+    --textGilroyR: 'Gilroy-Regular';
+    --textGilroyM: 'Gilroy-Medium'
 }
 body {
     background-color: #161616;
     color: var(--text);
     font-weight: 400;
+}
+
+.theme-text{
+    font-family: Gilroy-Regular;
+    font-weight: 400;
+    size : 25.6px;
+
+}
+
+.theme-image{
+    margin-top: 4px;
 }

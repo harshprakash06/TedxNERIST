@@ -6,8 +6,11 @@ import {
   TicketDownload,
   Hero,
   Navbar,
+  Policies,
+  Theme,
 } from "./components/index";
 import "./App.css";
+import { Link } from "react-router-dom";
 
 function App() {
   useEffect(() => {
@@ -24,8 +27,20 @@ function App() {
           path="/home"
           element={
             <>
-              <Hero />
+              <Navbar />
+              <div className="scrollbar-hide ml-25 mr-25">
+                <Theme />
+              </div>
             </>
+          }
+        />
+        <Route
+          path="/policies"
+          element={
+            <div>
+              <Navbar />
+              <Policies />
+            </div>
           }
         />
       </Routes>
