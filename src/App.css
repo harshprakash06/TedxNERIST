@@ -1,47 +1,55 @@
 @font-face {
-    font-family: 'Gilroy';
-    src: url('/fonts/Gilroy-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Gilroy-Medium';
-    src: url('/fonts/Gilroy-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Gilroy-Regular';
-    src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Gilroy-Medium";
+  src: url("/fonts/Gilroy-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Cirka';
-    src: url('/fonts/PPCirka-Variable.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Gilroy-Regular";
+  src: url("/fonts/Gilroy-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cirka";
+  src: url("/fonts/PPCirka-Variable.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 @import "tailwindcss";
 :root {
-    --background : #161616;
-    --text : #eae9e9;
-    --textred : hsl(9, 71%, 44%);
-    --tedxred :#eb0028;
-    --headerfonr : 'Gilroy';
-    --textfont : 'Cirka';
-    --textGilroyR: 'Gilroy-Regular';
-    --textGilroyM: 'Gilroy-Medium'
+  --background: #161616;
+  --text: #eae9e9;
+  --textred: hsl(9, 71%, 44%);
+  --tedxred: #eb0028;
+  --textabout: "#200409";
+  --headerfonr: "Gilroy";
+  --textfont: "Cirka";
+  --textGilroyR: "Gilroy-Regular";
+  --textGilroyM: "Gilroy-Medium";
 }
 body {
-    background-color: #161616;
-    color: var(--text);
-    font-weight: 400;
+  background-color: #161616;
+  color: var(--text);
+  font-weight: 400;
 }
 
 
-.theme-image{
-    margin-top: 4px;
+.theme-text {
+  font-family: Gilroy-Regular;
+  font-weight: 400;
+  size: 25.6px;
+}
+
+
+.theme-image {
+  margin-top: 4px;
 }

@@ -8,6 +8,7 @@ import {
   Navbar,
   Policies,
   Theme,
+  About,
 } from "./components/index";
 import "./App.css";
 import { Link } from "react-router-dom";
@@ -30,6 +31,7 @@ function App() {
               <div className="scrollbar-hide md:ml-25 md:mr-25">
                 <Theme />
               </div>
+              <About/>
             </>
           }
         />
