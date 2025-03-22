@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy-gcp" : "gsutil cp -r dist/* gs://tedxnerist"
   },
   "dependencies": {
     "@mobiscroll/react": "npm:@mobiscroll/react-next-trial@^5.33.2",
