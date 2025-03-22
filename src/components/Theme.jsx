@@ -1,5 +1,6 @@
 import React from "react";
 import PageDivider from "./PageDivider";
+import "../css/Theme.css";
 
 const Theme = () => {
   return (
@@ -17,11 +18,11 @@ const Theme = () => {
             className="w-[60%] h-auto rounded-lg shadow-lg"
           />
         </div>
-
         {/* Right Side - Text (Full Width, No Margin) */}
-        <div className="w-full text-left px-0 md:ml-[20%] mt-[1%] flex flex-col gap-12">
-          <p className="mt-3 text-2xl md:text-4xl mr-0 theme-text justify-around md:leading-14">
-            ❝<span className="italic ">Lighthouse Apus</span> embodies a radiant
+        <div className="w-full text-left px-0 md:ml-[20%] mt-[1%] flex flex-col gap-12 pl-5">
+          <p className="mt-3 theme-text mr-0 md:leading-14">
+            <span className="theme-text-quotaion"></span>
+            <span className="italic ">Lighthouse Apus</span> embodies a radiant
             beacon, illuminating pathways toward imaginative discovery and
             guiding explorers through uncharted realms with clarity and purpose.
             Inspired by the awe-inspiring constellation Apus—an elegant, vibrant
@@ -34,9 +35,9 @@ const Theme = () => {
             groundbreaking ideas forward. Ultimately, Lighthouse Apus shines a
             dazzling light upon daring innovation, fostering collaborative
             creativity, and uniting unique abilities in an inspired journey
-            toward boundless possibilities.❞
+            toward boundless possibilities.
           </p>
-          <div className="h-[400px] w-full bg-gray-400 rounded-4xl"></div>
+          <div className="h-[200px] w-full bg-gray-400 rounded-4xl"></div>
         </div>
       </div>
       <PageDivider />
