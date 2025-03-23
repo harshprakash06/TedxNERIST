@@ -1,3 +1,14 @@
+
+.reasons-image {
+  opacity: 0.15;  /* Use a valid opacity value (0 to 1) */
+  transition: opacity 1s ease, filter 1s ease; /* Smooth transition */
+}
+
+.group:hover .reasons-image {
+  opacity: 0.5;  /* Increase opacity on hover */
+  filter: grayscale(0); /* Remove grayscale on hover */
+}
+
 .container-reasons-title {
   height: 160px;
   width: 60%;
@@ -57,3 +68,5 @@
   text-align: center;
   margin: 0;
 }
+
+

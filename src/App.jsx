@@ -30,14 +30,11 @@ function App() {
           element={
             <>
               <Navbar />
-              <div className="scrollbar-hide md:ml-25 md:mr-25">
+              <div className=" md:ml-25 md:mr-25">
                 <Theme />
                 <About />
+                <ReasonsToAttend />
               </div>
-
-              <About/>
-              <ReasonsToAttend/>
-
             </>
           }
         />

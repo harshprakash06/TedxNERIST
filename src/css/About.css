@@ -10,18 +10,18 @@
   width: 368px;
   height: 420px;
   border-radius: 15px;
+
   padding: 34px 20px 20px 24px;
   background: linear-gradient(to bottom, #ECECEC, #8B8B8B);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-
 }
 
 
 .container-card::after {
-  content: "";
+
+  content:"";
   position: absolute;
-  top: 0;
+  top: -1px;
   right: 0;
   width: 80px;
   height: 80px;
@@ -31,8 +31,6 @@
   background-position: right 8px top 8px;
   background-color: var(--background);
   border-bottom-left-radius: 100px;
-  -webkit-mask-image: radial-gradient(circle 50px at bottom left, transparent 55%, black 56%);
-  mask-image: radial-gradient(circle 50px at bottom left, transparent 55%, black 56%);
 
 }
 
