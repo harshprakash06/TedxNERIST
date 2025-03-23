@@ -49,6 +49,9 @@ body {
   font-weight: 400;
 }
 
+html{
+  scroll-behavior: smooth;
+}
 
 .theme-text {
   font-family: Gilroy-Regular;

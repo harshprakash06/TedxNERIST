@@ -6,14 +6,30 @@
   justify-content: center;
 }
 .container-card {
-  height: 420px;
+  position: relative;
   width: 368px;
+  height: 420px;
   border-radius: 15px;
   padding: 34px 20px 20px 24px;
   background: linear-gradient(to bottom, #ECECEC, #8B8B8B);
-  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  -webkit-mask-image: radial-gradient(circle 100px at top right, transparent 80%, var(--background) 41%);
+  mask-image: radial-gradient(circle 100px at top right, transparent 80%, var(--background) 41%);
+
 }
 
+
+/* .container-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background: #181818; 
+  border-bottom-left-radius: 70px;
+} */
 
 .about-title {
   font-family: var(--textfont);
@@ -36,7 +52,7 @@
   flex-direction: column;
   gap: 2rem;
   font-family: var(--textGilroyM);
-  font-size: 20px;
+  font-size: 18px;
   color: #200409;
   line-height: 1;
   font-weight: 400;
