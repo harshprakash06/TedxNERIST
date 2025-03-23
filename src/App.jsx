@@ -24,16 +24,20 @@ function App() {
       <Routes>
         <Route path="/" element={<ComingSoon />} />
         <Route path="/buyticket" element={<TicketPurchase />} />
-        <Route path="/ticket/:id" element={<TicketDownload />} /> <Route
+        <Route path="/ticket/:id" element={<TicketDownload />} />{" "}
+        <Route
           path="/home"
           element={
             <>
               <Navbar />
               <div className="scrollbar-hide md:ml-25 md:mr-25">
                 <Theme />
+                <About />
               </div>
+
               <About/>
               <ReasonsToAttend/>
+
             </>
           }
         />

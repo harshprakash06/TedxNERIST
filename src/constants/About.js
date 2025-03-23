@@ -4,7 +4,8 @@ export const about = [
     subtitle: "NERIST",
     description:
       "Lighthouse Apus embodies a radiant beacon, illuminating pathways toward imaginative discovery and guiding explorers through uncharted realms with clarity and purpose. ",
-    subdescription: "",
+    subdescription:
+      "Lighthouse Apus illuminates paths to discovery, guiding explorers with clarity, purpose, and inspiration through uncharted realms of imagination and innovation.",
   },
   {
     title: "TED",
