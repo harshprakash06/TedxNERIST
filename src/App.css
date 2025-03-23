@@ -38,6 +38,7 @@
   --textred: hsl(9, 71%, 44%);
   --tedxred: #eb0028;
   --textabout: "#200409";
+  --titlefont: "OverpassMono";
   --headerfonr: "Gilroy";
   --textfont: "Cirka";
   --textGilroyR: "Gilroy-Regular";
@@ -53,12 +54,12 @@ html{
   scroll-behavior: smooth;
 }
 
+
 .theme-text {
   font-family: Gilroy-Regular;
   font-weight: 400;
   size: 25.6px;
 }
-
 
 .theme-image {
   margin-top: 4px;

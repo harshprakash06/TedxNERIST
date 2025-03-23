@@ -1,0 +1,59 @@
+.container-reasons-title {
+  height: 160px;
+  width: 60%;
+  background: #161616;
+  border-radius: 50px;
+  border: 1px solid #ECECEC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reasons-title {
+  font-family: var(--textfont);
+  color: var(--text);
+  font-size: 114px;
+  line-height: 1.4;
+  letter-spacing: 0.1rem;
+}
+
+@media (max-width: 768px) {
+  .container-reasons-title {
+    width: 80%;
+  }
+  .reasons-title {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 1280px) {
+  .reasons-title {
+    font-size: 4rem;
+  }
+}
+
+.container-reasons-card {
+  height: 360px;  
+  width: 360px;  
+}
+
+.reasons-card-title {
+  font-family: var(--titlefont);
+  color: var(--text);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+
+.reasons-card-description {
+  width: 70%;
+  font-family: var(--textGilroyR);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}

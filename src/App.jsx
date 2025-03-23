@@ -9,6 +9,7 @@ import {
   Policies,
   Theme,
   About,
+  ReasonsToAttend,
 } from "./components/index";
 import "./App.css";
 import { Link } from "react-router-dom";
@@ -33,6 +34,10 @@ function App() {
                 <Theme />
                 <About />
               </div>
+
+              <About/>
+              <ReasonsToAttend/>
+
             </>
           }
         />

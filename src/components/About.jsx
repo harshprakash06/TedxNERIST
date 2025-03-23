@@ -7,11 +7,11 @@ import PageDivider from "./PageDivider";
 const About = () => {
   return (
     <>
-      <div className="container-about-us">
+      <div className="container-about-us xl:translate-y-[-10%]">
         <div>
           <h1 className="about-title">About Us</h1>
         </div>
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {about.map((card, id) => (
             <Card
               key={id}

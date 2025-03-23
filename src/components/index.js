@@ -5,4 +5,5 @@ import Policies from "./Policies.jsx";
 import Navbar from "./Navbar.jsx";
 import Theme from "./Theme.jsx";
 import About from "./About.jsx";
-export { TicketPurchase, TicketDownload, Hero, Navbar, Policies, Theme, About };
+import ReasonsToAttend from "./ReasonsToAttend.jsx";
+export { TicketPurchase, TicketDownload, Hero, Navbar, Policies, Theme, About, ReasonsToAttend };

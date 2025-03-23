@@ -1,16 +1,33 @@
 .container-about-us {
-  height: 100vh;
+  min-height: 130vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 1280px) {
+  .container-about-us {
+    margin-bottom: 8rem;
+  }
+}
+
 .container-card {
+
+  height: 500px;
+
   position: relative;
+
   width: 368px;
   height: 420px;
   border-radius: 15px;
   padding: 34px 20px 20px 24px;
+
+  background: linear-gradient(to bottom, #ececec, #8b8b8b);
+  position: relative;
+}
+
+
   background: linear-gradient(to bottom, #ECECEC, #8B8B8B);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -36,6 +53,7 @@
 
 }
 
+
 .about-title {
   font-family: var(--textfont);
   color: var(--text);
@@ -46,10 +64,10 @@
 
 .card-title {
   font-family: OverpassMono;
-  color: #C23B22;
+  color: #c23b22;
   font-size: 34px;
   line-height: 1.4;
-  letter-spacing: 4%;
+  letter-spacing: 0.2rem;
 }
 
 .card-description {
