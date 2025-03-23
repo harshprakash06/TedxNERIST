@@ -1,10 +1,12 @@
 .theme-text{
+   
     font-family: Gilroy-Regular;
-    font-size:2rem;
+    font-size:18px;
     line-height: 140%;
     font-weight: 100;
     letter-spacing: 1.024px;
 }
+
 
 .theme-text-quotation {
   content: url("/images/text-quotation.png");  
