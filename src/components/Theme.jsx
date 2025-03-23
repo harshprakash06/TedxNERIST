@@ -21,8 +21,8 @@ const Theme = () => {
         </div>
         {/* Right Side - Text (Full Width, No Margin) */}
         <div className="w-full text-left px-0 md:ml-[20%] mt-[1%] flex flex-col gap-12 pl-5">
-          <p className="mt-3 theme-text mr-0 md:leading-14">
-            <span className="theme-text-quotaion"></span>
+          <p className="mt-3 theme-text mr-0 md:leading-14 relative">
+            <span className="theme-text-quotation top-[-0.5rem] left-[-1.5rem]"></span>
             <span className="italic ">Lighthouse Apus</span> embodies a radiant
             beacon, illuminating pathways toward imaginative discovery and
             guiding explorers through uncharted realms with clarity and purpose.
@@ -37,6 +37,7 @@ const Theme = () => {
             dazzling light upon daring innovation, fostering collaborative
             creativity, and uniting unique abilities in an inspired journey
             toward boundless possibilities.
+            <span className="theme-text-quotation rotate-180"></span>
           </p>
           <div className="h-[200px] w-full bg-gray-400 rounded-4xl"></div>
         </div>
