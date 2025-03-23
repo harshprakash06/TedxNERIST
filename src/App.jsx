@@ -10,6 +10,7 @@ import {
   Theme,
   About,
   ReasonsToAttend,
+  Footer,
 } from "./components/index";
 import "./App.css";
 import { Link } from "react-router-dom";
@@ -35,6 +36,7 @@ function App() {
                 <About />
                 <ReasonsToAttend />
               </div>
+              <Footer />
             </>
           }
         />

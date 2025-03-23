@@ -6,4 +6,15 @@ import Navbar from "./Navbar.jsx";
 import Theme from "./Theme.jsx";
 import About from "./About.jsx";
 import ReasonsToAttend from "./ReasonsToAttend.jsx";
-export { TicketPurchase, TicketDownload, Hero, Navbar, Policies, Theme, About, ReasonsToAttend };
+import Footer from "./Footer.jsx";
+export {
+  TicketPurchase,
+  TicketDownload,
+  Hero,
+  Navbar,
+  Policies,
+  Theme,
+  About,
+  ReasonsToAttend,
+  Footer,
+};
