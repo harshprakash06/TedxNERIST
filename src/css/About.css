@@ -6,6 +6,12 @@
   justify-content: center;
 }
 
+@media (max-width: 1280px) {
+  .container-about-us {
+    margin-bottom: 8rem;
+  }
+}
+
 .container-card {
   height: 500px;
   width: 368px;
