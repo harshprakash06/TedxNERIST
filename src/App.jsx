@@ -7,13 +7,15 @@ import {
   TicketDownload,
   Hero,
   Navbar,
-  Policies,
   Theme,
   About,
   ReasonsToAttend,
   Footer,
   PageDivider,
   Sponsors,
+  PrivacyPolicy,
+  NoRefundPolicy,
+  TermsAndConditions,
 } from "./components/index";
 import "./App.css";
 
@@ -27,7 +29,11 @@ function App() {
       <Routes>
         <Route path="/" element={<ComingSoon />} />
         <Route path="/buyticket" element={<TicketPurchase />} />
-        <Route path="/ticket/:id" element={<TicketDownload />} />{" "}
+        <Route path="/ticket/:id" element={<TicketDownload />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/refund" element={<NoRefundPolicy />} />
+        <Route path="/term" element={<TermsAndConditions />} />
+
         <Route
           path="/home"
           element={
@@ -47,15 +53,6 @@ function App() {
 
               <Footer />
             </>
-          }
-        />
-        <Route
-          path="/policies"
-          element={
-            <div>
-              <Navbar />
-              <Policies />
-            </div>
           }
         />
       </Routes>

@@ -1,9 +1,22 @@
 import React from "react";
 import { reasons } from "../constants/Reasons";
 import "../css/ReasonsToAttend.css";
+import { useState, useEffect } from "react";
+
 import ReasonsCard from "./ReasonsCard";
 
 const ReasonsToAttend = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  console.log(width);
+
   return (
     <div className="min-h-[160vh]">
       <div>

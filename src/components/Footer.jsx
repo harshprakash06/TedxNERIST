@@ -119,8 +119,12 @@ function Footer() {
             a license granted by TED.
           </p>
           <div className="flex justify-center gap-4 mt-2">
-            <span>Privacy Policy</span>
-            <span>Terms</span>
+            <a href="/policy">
+              <span>Privacy Policy</span>
+            </a>
+            <a href="/terms">
+              <span>Terms</span>
+            </a>
             <span>Legal</span>
           </div>
         </div>

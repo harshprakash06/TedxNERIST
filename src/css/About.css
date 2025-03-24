@@ -4,11 +4,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: fit-content; /* Allows content to grow dynamically */
+  padding: 2rem 0; /* Adds spacing to avoid overlap */
 
-    min-height: fit-content; /* Allows content to grow dynamically */
-    padding: 2rem 0; /* Adds spacing to avoid overlap */
-  
-  
 }
 
 .container-card {
@@ -61,7 +59,7 @@
   flex-direction: column;
   gap: 2rem;
   font-family: var(--textGilroyM);
-  font-size: 18px;
+  font-size: 22px;
   color: #200409;
   line-height: 1;
   font-weight: 400;
@@ -76,6 +74,9 @@
   }
   .container-card{
     width: 313px;
+  }
+  .card-description{
+    font-size: 0.85rem;
   }
 
 }
