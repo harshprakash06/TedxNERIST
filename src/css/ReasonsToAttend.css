@@ -70,3 +70,18 @@
 }
 
 
+
+@media (width: 1440px) and (height: 812px) {
+  .container-reasons-title {
+    width: 50%;  /* Example: Adjust width for this resolution */
+  }
+
+  .reasons-title {
+    font-size: 3rem;  /* Example: Adjust font size */
+  }
+}
+@media (max-width: 768px){
+  .container-reasons-title {
+    height: 80px;  /* Example: Adjust width for this resolution */
+  }
+}

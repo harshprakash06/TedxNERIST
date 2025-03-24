@@ -5,12 +5,12 @@
   align-items: center;
   justify-content: center;
 }
+
 .container-card {
   position: relative;
   width: 368px;
   height: 420px;
   border-radius: 15px;
-
   padding: 34px 20px 20px 24px;
   background: linear-gradient(to bottom, #ECECEC, #8B8B8B);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -18,14 +18,13 @@
 
 
 .container-card::after {
-
   content:"";
   position: absolute;
   top: -1px;
   right: 0;
   width: 80px;
   height: 80px;
-  background-image: url('/images/star.svg');
+  background-image: url('/images/star.svg'); 
   background-repeat: no-repeat;
   background-size: 50px 50px;
   background-position: right 8px top 8px;
@@ -42,7 +41,9 @@
   letter-spacing: 0.1rem;
 }
 
+
 .card-title {
+  
   font-family: OverpassMono;
   color: #C23B22;
   font-size: 34px;
@@ -59,4 +60,12 @@
   color: #200409;
   line-height: 1;
   font-weight: 400;
+}
+@media (max-width: 768px) {
+  .about-title{
+    font-size: 3rem
+  }
+  .container-card{
+    width: 313px;
+  }
 }

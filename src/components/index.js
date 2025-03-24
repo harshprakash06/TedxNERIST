@@ -7,6 +7,7 @@ import Theme from "./Theme.jsx";
 import About from "./About.jsx";
 import ReasonsToAttend from "./ReasonsToAttend.jsx";
 import Footer from "./Footer.jsx";
+import PageDivider from "./PageDivider.jsx";
 export {
   TicketPurchase,
   TicketDownload,
@@ -17,4 +18,5 @@ export {
   About,
   ReasonsToAttend,
   Footer,
+  PageDivider,
 };

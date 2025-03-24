@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
+
 import {
   TicketPurchase,
   TicketDownload,
@@ -11,9 +12,9 @@ import {
   About,
   ReasonsToAttend,
   Footer,
+  PageDivider,
 } from "./components/index";
 import "./App.css";
-import { Link } from "react-router-dom";
 
 function App() {
   useEffect(() => {
@@ -31,11 +32,19 @@ function App() {
           element={
             <>
               <Navbar />
-              <div className=" md:ml-25 md:mr-25">
-                <Theme />
-                <About />
-                <ReasonsToAttend />
+              <div className="page-container">
+                <div className=" theme-section">
+                  <Theme />
+                </div>
+                <div className=" about-section">
+                  <About />
+                </div>
+                <PageDivider /> <PageDivider /> <PageDivider />
+                <div className=" reasons-section">
+                  <ReasonsToAttend />
+                </div>
               </div>
+
               <Footer />
             </>
           }

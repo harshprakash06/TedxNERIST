@@ -64,3 +64,39 @@ html{
 .theme-image {
   margin-top: 4px;
 }
+button {
+  background-color: transparent;
+}
+
+.page-container {
+  position: relative;
+  margin-right: 80px;
+  margin-left: 80px;
+
+}
+
+.theme-section {
+  margin-bottom: 10rem; /* More space on mobile */
+}
+
+/* Add more spacing on smaller screens */
+@media (max-width: 768px) {
+  .theme-section {
+    margin-bottom: 24rem; /* More space on mobile */
+  }
+
+  .about-section {
+    margin-bottom: 32rem; /* Adjust spacing */
+  }
+  .reasons-section{
+    margin-bottom: 10rem;
+  }
+
+.page-container {
+  position: relative;
+  margin-right: 00px;
+  margin-left: 00px;
+
+}
+
+}
