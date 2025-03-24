@@ -19,11 +19,12 @@ function Footer() {
             </p>
 
             {/* Map Section */}
-            <div className="mt-4">
+            <div className="mt-4 ">
               <iframe
                 title="TEDx NERIST Location"
                 className="w-full h-40 rounded-lg"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3551.0182671765815!2d93.73606939678953!3d27.124234600000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3743ff771f0446b5%3A0x14fa96c700366cf5!2sNERIST%20Auditorium!5e0!3m2!1sen!2sin!4v1742853582482!5m2!1sen!2sin"
+                width="200"
                 allowFullScreen
               ></iframe>
             </div>
@@ -88,7 +89,9 @@ function Footer() {
                 </a>
               </div>
               <p className="mt-4 font-semibold">Call us</p>
-              <p>+91 88220 78464</p>
+              <p>
+                +91 88220 78464 <br></br>{" "}
+              </p>
             </div>
 
             {/* Programs & Community - Side by Side on PC, Stacked on Phone */}
