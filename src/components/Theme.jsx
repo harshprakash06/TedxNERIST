@@ -84,7 +84,6 @@ const PhoneTheme = () => {
 
       {/* Grey Section Below Text */}
       <div className="h-[150px] w-full bg-gray-400 rounded-4xl mt-8 mb-8"></div>
-      <div className=""></div>
     </div>
   );
 };

@@ -13,6 +13,7 @@ import {
   ReasonsToAttend,
   Footer,
   PageDivider,
+  Sponsors,
 } from "./components/index";
 import "./App.css";
 
@@ -40,10 +41,9 @@ function App() {
                   <About />
                 </div>
                 <PageDivider /> <PageDivider /> <PageDivider />
-                <div className=" reasons-section">
-                  <ReasonsToAttend />
-                </div>
+                <ReasonsToAttend />
               </div>
+              <Sponsors />
 
               <Footer />
             </>

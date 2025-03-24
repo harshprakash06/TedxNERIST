@@ -1,0 +1,56 @@
+.sponsors-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  .sponsors-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+  
+  .sponsors-marquee {
+    display: flex;
+    gap: 40px;
+    animation: marquee 25s linear infinite; /* Slowed down */
+  }
+  
+  .sponsor-logo {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    filter: grayscale(100%); /* Make logos black & white */
+    transition: filter 0.3s ease-in-out;
+  }
+  
+  .sponsor-logo:hover {
+    filter: grayscale(0%); /* Restore color on hover */
+  }
+  
+  /* Infinite Scrolling Animation */
+  @keyframes marquee {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .sponsor-logo {
+      width: 130px;
+      height: 130px;
+    }
+  
+    .sponsors-marquee {
+      animation: marquee 20s linear infinite; /* Slow on mobile too */
+    }
+  }
+  

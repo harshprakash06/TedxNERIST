@@ -8,6 +8,7 @@ import About from "./About.jsx";
 import ReasonsToAttend from "./ReasonsToAttend.jsx";
 import Footer from "./Footer.jsx";
 import PageDivider from "./PageDivider.jsx";
+import Sponsors from "./Sponsors.jsx";
 export {
   TicketPurchase,
   TicketDownload,
@@ -19,4 +20,5 @@ export {
   ReasonsToAttend,
   Footer,
   PageDivider,
+  Sponsors,
 };
