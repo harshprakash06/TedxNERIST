@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import {
   TicketPurchase,
@@ -16,6 +17,7 @@ import {
   PrivacyPolicy,
   NoRefundPolicy,
   TermsAndConditions,
+  TeamSection,
 } from "./components/index";
 import "./App.css";
 
@@ -30,9 +32,18 @@ function App() {
         <Route path="/" element={<ComingSoon />} />
         <Route path="/buyticket" element={<TicketPurchase />} />
         <Route path="/ticket/:id" element={<TicketDownload />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/refund" element={<NoRefundPolicy />} />
         <Route path="/term" element={<TermsAndConditions />} />
+        <Route
+          path="/team"
+          element={
+            <>
+              <Navbar />
+              <TeamSection /> <Footer />
+            </>
+          }
+        />
 
         <Route
           path="/home"
@@ -47,11 +58,16 @@ function App() {
                   <About />
                 </div>
                 <PageDivider /> <PageDivider /> <PageDivider />
-                <ReasonsToAttend />
               </div>
-              <Sponsors />
-
-              <Footer />
+              <ReasonsToAttend />
+              <div className=" sponsor-section ">
+                <div id="sponsor">
+                  <Sponsors />
+                </div>
+                <div id="contact footer">
+                  <Footer />
+                </div>
+              </div>
             </>
           }
         />

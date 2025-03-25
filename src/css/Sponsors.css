@@ -17,7 +17,9 @@
   .sponsors-marquee {
     display: flex;
     gap: 40px;
-    animation: marquee 25s linear infinite; /* Slowed down */
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+    will-change: transform;
   }
   
   .sponsor-logo {
@@ -26,6 +28,7 @@
     object-fit: contain;
     filter: grayscale(100%); /* Make logos black & white */
     transition: filter 0.3s ease-in-out;
+
   }
   
   .sponsor-logo:hover {

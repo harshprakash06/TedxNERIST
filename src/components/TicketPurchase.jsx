@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/TicketPurchase.css";
 import url from "../constants/config.js";
 
 const TicketPurchase = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
@@ -36,6 +38,7 @@ const TicketPurchase = () => {
           type: "ticket",
           name: formData.name,
           email: formData.email,
+          amount: 300,
         }),
       });
 
@@ -71,6 +74,7 @@ const TicketPurchase = () => {
                 paymentId: response.razorpay_payment_id,
                 signature: response.razorpay_signature,
                 type: "ticket",
+                amount: 300,
               }),
             }
           );
@@ -91,7 +95,7 @@ const TicketPurchase = () => {
         email: formData.email,
         contact: formData.phone,
       },
-      theme: { color: "#000000" },
+      theme: { color: "#FFFFFF" },
     };
 
     const razor = new window.Razorpay(options);
@@ -99,50 +103,52 @@ const TicketPurchase = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Secure Your Spot Now!</h2>
-      <p>Limited seats available. Get your ticket today.</p>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Full Name</label>
-          <input
-            type="text"
-            name="name"
-            placeholder="John Doe"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="john@example.com"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          {errors.email && <p className="error">{errors.email}</p>}
-        </div>
-        <div>
-          <label>Phone Number</label>
-          <input
-            type="text"
-            name="phone"
-            placeholder="1234567890"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
-          {errors.phone && <p className="error">{errors.phone}</p>}
-        </div>
-        <button type="submit" disabled={loading}>
-          {loading ? "Processing..." : "Buy Ticket"}
-        </button>
-      </form>
-    </div>
+    <>
+      <div className="container">
+        <h2>Secure Your Spot Now!</h2>
+        <p>Limited seats available. Get your ticket today.</p>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Full Name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="John Doe"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="john@example.com"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            {errors.email && <p className="error">{errors.email}</p>}
+          </div>
+          <div>
+            <label>Phone Number</label>
+            <input
+              type="text"
+              name="phone"
+              placeholder="1234567890"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+            />
+            {errors.phone && <p className="error">{errors.phone}</p>}
+          </div>
+          <button type="submit" disabled={loading}>
+            {loading ? "Processing..." : "Buy Ticket"}
+          </button>
+        </form>
+      </div>
+    </>
   );
 };
 

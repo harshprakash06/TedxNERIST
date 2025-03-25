@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/Navbar.css";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
 
@@ -71,22 +72,22 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <nav className="hidden space-x-10 md:flex md:items-center md:justify-center lg:space-x-16">
               {["Home", "About", "Speaker", "Partner", "Team"].map((label) => (
-                <a
+                <Link
                   key={label}
-                  href={`/${label.toLowerCase()}`}
+                  to={`/${label.toLowerCase()}`}
                   className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
                 >
                   {label}
-                </a>
+                </Link>
               ))}
             </nav>
 
             {/* Book Tickets Button */}
             <div className="hidden md:inline-flex items-center">
-              <a href="/buyticket" className="custom-button">
+              <Link to="/buyticket" className="custom-button">
                 <span className="text">Book Now →</span>
                 <img src={"/arrow.svg"} alt="Arrow" className="arrow-icon" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -94,20 +95,20 @@ const Navbar = () => {
           {expanded && (
             <nav className="pt-8 pb-4 space-y-8">
               {["Home", "About", "Speaker", "Partner", "Team"].map((label) => (
-                <a
+                <Link
                   key={label}
-                  href={`/${label.toLowerCase()}`}
+                  to={`/${label.toLowerCase()}`}
                   className="block text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
                 >
                   {label}
-                </a>
+                </Link>
               ))}
 
               <div className="relative inline-flex items-center justify-center group">
-                <a href="/buyticket" className="custom-button">
+                <Link to="/buyticket" className="custom-button">
                   <span className="text">Book Now</span>
                   <img src={"/arrow.svg"} alt="Arrow" className="arrow-icon" />
-                </a>
+                </Link>
               </div>
             </nav>
           )}

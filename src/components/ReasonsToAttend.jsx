@@ -15,7 +15,6 @@ const ReasonsToAttend = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  console.log(width);
 
   return (
     <div className="min-h-[160vh]">

@@ -8,9 +8,10 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy-gcp" : "gsutil cp -r dist/* gs://tedxenerist"
+    "deploy-gcp": "gsutil cp -r dist/* gs://tedxenerist"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "@mobiscroll/react": "npm:@mobiscroll/react-next-trial@^5.33.2",
     "@tailwindcss/vite": "^4.0.13",
     "framer-motion": "^12.5.0",

@@ -12,6 +12,7 @@ import Sponsors from "./Sponsors.jsx";
 import PrivacyPolicy from "./PrivacyPolicy.jsx";
 import NoRefundPolicy from "./RefundPolicy.jsx";
 import TermsAndConditions from "./TermsAndConditions.jsx";
+import TeamSection from "./TeamSection.jsx";
 export {
   TicketPurchase,
   TicketDownload,
@@ -26,4 +27,5 @@ export {
   PrivacyPolicy,
   NoRefundPolicy,
   TermsAndConditions,
+  TeamSection,
 };

@@ -82,11 +82,11 @@ button {
 /* Add more spacing on smaller screens */
 @media (max-width: 768px) {
   .theme-section {
-    margin-bottom: 24rem; /* More space on mobile */
+    margin-bottom: 10rem; /* More space on mobile */
   }
 
   .about-section {
-    margin-bottom: 32rem; /* Adjust spacing */
+    margin-bottom: 10rem; 
   }
   .reasons-section{
     margin-bottom: 10rem;
@@ -97,6 +97,9 @@ button {
   margin-right: 00px;
   margin-left: 00px;
 
+}
+.sponsor-section{
+  margin-top: 10rem;
 }
 
 }
