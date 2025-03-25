@@ -45,10 +45,3 @@
     background: gray;
     cursor: not-allowed;
   }
-  
-  .error {
-    color: red;
-    font-size: 12px;
-    text-align: left;
-  }
-  

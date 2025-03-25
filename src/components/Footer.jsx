@@ -24,8 +24,8 @@ function Footer() {
                 title="TEDx NERIST Location"
                 className="w-full h-40 rounded-lg"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3551.0182671765815!2d93.73606939678953!3d27.124234600000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3743ff771f0446b5%3A0x14fa96c700366cf5!2sNERIST%20Auditorium!5e0!3m2!1sen!2sin!4v1742853582482!5m2!1sen!2sin"
-                width="200"
                 allowFullScreen
+                loading="lazy"
               ></iframe>
             </div>
           </div>
@@ -97,7 +97,7 @@ function Footer() {
             {/* Programs & Community - Side by Side on PC, Stacked on Phone */}
             <div className="flex flex-col md:flex-row gap-6 w-full">
               <div className="w-full md:w-1/2">
-                <h3 className="font-semibold mb-2">Programs</h3>
+                <h3 className="font-semibold mb-2 ">Programs</h3>
                 <ul className="space-y-1">
                   <li>TEDx</li>
                   <li>TED Fellows</li>
@@ -135,10 +135,12 @@ function Footer() {
             <a href="/policy">
               <span>Privacy Policy</span>
             </a>
-            <a href="/terms">
+            <a href="/refund">
+              <span>Refund</span>
+            </a>
+            <a href="/term">
               <span>Terms</span>
             </a>
-            <span>Legal</span>
           </div>
         </div>
       </div>

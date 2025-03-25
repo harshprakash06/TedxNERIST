@@ -4,7 +4,7 @@ import url from "../constants/config.js";
 
 const TicketPurchase = () => {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
-  const [errors, setErrors] = useState({ email: "", phone: "" });
+  const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -17,7 +17,7 @@ const TicketPurchase = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let newErrors = { email: "", phone: "" };
+    let newErrors = {};
 
     if (!validateEmail(formData.email))
       newErrors.email = "Invalid email format";
@@ -25,39 +25,32 @@ const TicketPurchase = () => {
       newErrors.phone = "Phone number must be 10 digits";
 
     setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) return;
 
-    if (!newErrors.email && !newErrors.phone) {
-      setLoading(true);
-      try {
-        const orderResponse = await fetch(`${url}/api/razorpay/create-order`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            type: "ticket",
-            name: formData.name,
-            email: formData.email,
-          }),
-        });
+    setLoading(true);
+    try {
+      const orderResponse = await fetch(`${url}/api/razorpay/create-order`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "ticket",
+          name: formData.name,
+          email: formData.email,
+        }),
+      });
 
-        const order = await orderResponse.text();
-
-        setLoading(false);
-
-        if (order) {
-          const parsedOrder = JSON.parse(order);
-
-          initiateRazorpay(parsedOrder.id);
-        }
-      } catch (error) {
-        setLoading(false);
-        console.error("Order creation failed", error);
-      }
+      const order = await orderResponse.json();
+      setLoading(false);
+      if (order && order.id) initiateRazorpay(order.id);
+      else alert("⚠️ Order creation failed. Try again.");
+    } catch (error) {
+      setLoading(false);
+      console.error("Order creation failed", error);
+      alert("Something went wrong! Please try again.");
     }
   };
 
   const initiateRazorpay = (orderId) => {
-    let storedOrderId = orderId;
-
     const options = {
       key: "rzp_test_e8nmkRiQJIqDJo",
       amount: 30000,
@@ -66,17 +59,15 @@ const TicketPurchase = () => {
       description: "Ticket Purchase",
       image: "/logo.svg",
       order_id: orderId,
-      handler: async (response, order_id) => {
-        console.log(response);
+      handler: async (response) => {
         try {
-          console.log(order_id);
           const verifyResponse = await fetch(
             `${url}/api/razorpay/verify-payment`,
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
-                order: storedOrderId,
+                order: orderId,
                 paymentId: response.razorpay_payment_id,
                 signature: response.razorpay_signature,
                 type: "ticket",
@@ -84,17 +75,15 @@ const TicketPurchase = () => {
             }
           );
 
-          const verification = await verifyResponse.text();
-          const parsedVerification = JSON.parse(verification);
-          console.log((parsedVerification.status = 200));
-          if ((parsedVerification.status = 200)) {
-            window.location.href = `/ticket/${parsedVerification.ticket}`;
+          const verification = await verifyResponse.json();
+          if (verification.status === 200) {
+            window.location.href = `/ticket/${verification.ticket}`;
           } else {
             alert("❌ Payment verification failed!");
           }
         } catch (error) {
           console.error("Verification failed", error);
-          alert("Something went wrong!");
+          alert("Something went wrong! Please contact support.");
         }
       },
       prefill: {
@@ -111,7 +100,8 @@ const TicketPurchase = () => {
 
   return (
     <div className="container">
-      <p>Secure your spot now! Limited seats available.</p>
+      <h2>Secure Your Spot Now!</h2>
+      <p>Limited seats available. Get your ticket today.</p>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Full Name</label>
