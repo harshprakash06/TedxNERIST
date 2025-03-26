@@ -9,7 +9,7 @@ function Hero() {
 
   const getFrameSrc = (index) => {
     const paddedIndex = String(index).padStart(2, "0"); // e.g., 0 becomes "00", 1 becomes "01"
-    return `http://cdn.tedxnerist.com/images/animation/intro${paddedIndex}.png`;
+    return `https://cdn.tedxnerist.com/images/animation/intro${paddedIndex}.png`;
   };
 
   useEffect(() => {
