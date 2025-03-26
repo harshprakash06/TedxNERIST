@@ -1,18 +1,37 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../css/Hero.css";
 import { Navbar } from "./";
 
 function Hero() {
   const imageRef = useRef(null);
   const sectionRef = useRef(null);
-  const totalFrames = 79; // Adjust this to your actual frame count
+  const totalFrames = 70;
+  const images = useRef([]);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  const getFrameSrc = (index) => {
-    const paddedIndex = String(index).padStart(2, "0"); // e.g., 0 becomes "00", 1 becomes "01"
-    return `https://cdn.tedxnerist.com/images/animation/intro${paddedIndex}.png`;
-  };
+  const getFrameSrc = (index) =>
+    `/images/animation/intro${String(index).padStart(2, "0")}.jpg`;
 
   useEffect(() => {
+    let loadedCount = 0;
+
+    // Preload images
+    for (let i = 0; i < totalFrames; i++) {
+      const img = new Image();
+      img.src = getFrameSrc(i);
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === totalFrames) {
+          setImagesLoaded(true);
+        }
+      };
+      images.current[i] = img;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!imagesLoaded) return; // Only start animation once images are loaded
+
     const img = imageRef.current;
     const section = sectionRef.current;
     if (!img || !section) return;
@@ -26,11 +45,8 @@ function Hero() {
       scrollProgress = Math.max(0, Math.min(scrollProgress, 1));
 
       const frameIndex = Math.floor(scrollProgress * (totalFrames - 1));
-      const newSrc = getFrameSrc(frameIndex);
+      img.src = images.current[frameIndex]?.src || img.src;
 
-      if (img.src.indexOf(newSrc) === -1) {
-        img.src = newSrc;
-      }
       animationFrame = requestAnimationFrame(updateFrame);
     };
 
@@ -47,20 +63,24 @@ function Hero() {
       window.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(animationFrame);
     };
-  }, []);
+  }, [imagesLoaded]); // Only run when images are loaded
 
   return (
     <>
       <Navbar />
-      <section className="vid" ref={sectionRef}>
-        <div className="holder">
-          <img
-            ref={imageRef}
-            src="/img/frames/intro00.png" // starting frame
-            alt="Scroll Animation Frame"
-          />
-        </div>
-      </section>
+      {imagesLoaded ? (
+        <section className="vid" ref={sectionRef}>
+          <div className="holder">
+            <img
+              ref={imageRef}
+              src={getFrameSrc(0)} // Start with the first frame
+              alt="Scroll Animation Frame"
+            />
+          </div>
+        </section>
+      ) : (
+        <div className="loading">Loading animation...</div>
+      )}
     </>
   );
 }

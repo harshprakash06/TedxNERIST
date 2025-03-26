@@ -17,7 +17,13 @@
     white-space: nowrap; /* Prevents text wrapping */
 }
 .header {
-  background-color: transparent !important;
+  background: rgba(59, 59, 59, 0.1);
+  position: absolute;
+  box-shadow: 0 0px 2px var(--background);
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+
+
   position: absolute;
   width: 100%;
   top: 0;
