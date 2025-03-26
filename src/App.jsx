@@ -18,6 +18,7 @@ import {
   NoRefundPolicy,
   TermsAndConditions,
   TeamSection,
+  Speaker,
 } from "./components/index";
 import "./App.css";
 
@@ -49,11 +50,14 @@ function App() {
           path="/home"
           element={
             <>
-              <Navbar />
+              <Hero />
               <div className="page-container">
                 <div className=" theme-section">
                   <Theme />
                 </div>
+                {/* <div className="speakers-section">
+                  <Speaker />
+                </div> */}
                 <div className=" about-section">
                   <About />
                 </div>
@@ -64,6 +68,7 @@ function App() {
                 <div id="sponsor">
                   <Sponsors />
                 </div>
+
                 <div id="contact footer">
                   <Footer />
                 </div>

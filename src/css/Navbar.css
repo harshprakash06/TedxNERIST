@@ -16,6 +16,15 @@
     transition: background 0.3s ease-out, color 0.3s ease-out;
     white-space: nowrap; /* Prevents text wrapping */
 }
+.header {
+  background-color: transparent !important;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
 
 .custom-button .text {
     display: flex;

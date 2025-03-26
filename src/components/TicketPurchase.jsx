@@ -58,7 +58,7 @@ const TicketPurchase = () => {
       key: "rzp_test_e8nmkRiQJIqDJo",
       amount: 30000,
       currency: "INR",
-      name: "TEDx NERIST",
+      name: "TEDxNERIST",
       description: "Ticket Purchase",
       image: "/logo.svg",
       order_id: orderId,

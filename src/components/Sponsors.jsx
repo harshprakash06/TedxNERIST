@@ -6,7 +6,7 @@ import PageDivider from "./PageDivider";
 
 const Sponsors = () => {
   return (
-    <div className="min-h-screen relative">
+    <div className="mb-20 relative">
       {/* PageDivider Positioned Slightly Higher on Mobile */}
       <div className="relative -mt-8 sm:-mt-10 md:-mt-12 lg:-mt-16 page-container">
         <PageDivider />

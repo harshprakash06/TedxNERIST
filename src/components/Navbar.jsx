@@ -69,7 +69,6 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Desktop Navigation */}
             <nav className="hidden space-x-10 md:flex md:items-center md:justify-center lg:space-x-16">
               {["Home", "About", "Speaker", "Partner", "Team"].map((label) => (
                 <Link
@@ -82,7 +81,6 @@ const Navbar = () => {
               ))}
             </nav>
 
-            {/* Book Tickets Button */}
             <div className="hidden md:inline-flex items-center">
               <Link to="/buyticket" className="custom-button">
                 <span className="text">Book Now →</span>
@@ -91,7 +89,6 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile Navigation (Toggled) */}
           {expanded && (
             <nav className="pt-8 pb-4 space-y-8">
               {["Home", "About", "Speaker", "Partner", "Team"].map((label) => (
