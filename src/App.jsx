@@ -45,10 +45,6 @@ function SectionWrapper({ children, className }) {
 }
 
 function App() {
-  useEffect(() => {
-    document.title = "Website Coming Soon";
-  }, []);
-
   return (
     <BrowserRouter>
       <Routes>
