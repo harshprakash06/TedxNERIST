@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /api/private/
+Allow: /
+
+Sitemap: https://tedxnerist.com/sitemap.xml

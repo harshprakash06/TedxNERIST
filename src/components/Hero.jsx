@@ -6,7 +6,7 @@ function Hero() {
   const imageRef = useRef(null);
   const sectionRef = useRef(null);
   const textRef = useRef(null);
-  const totalFrames = 66;
+  const totalFrames = 60;
   const images = useRef([]);
 
   const [loadProgress, setLoadProgress] = useState(0);
