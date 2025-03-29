@@ -22,7 +22,7 @@ const TeamSection = () => {
       {isPhone ? (
         <div className="w-full flex items-center justify-center translate-y-[-50%] team-heading-mobile">
           <div className=" inline-block relative">
-            <h1 className="reasons-title text-xl font-bold whitespace-nowrap translate-y-[10px]">
+            <h1 className="reasons-title text-xl font-bold whitespace-nowrap translate-y-[10px] mt-9">
               Meet our Team
             </h1>
           </div>
@@ -47,6 +47,7 @@ const TeamSection = () => {
         {Team.map((member, index) => (
           <div key={index} className="profile-card">
             <div className="img">
+              {console.log(member.img)}
               <img src={member.img} alt={member.name} />
             </div>
             <div className="caption">
@@ -61,15 +62,22 @@ const TeamSection = () => {
                   <></>
                 )}
                 {member.instagram ? (
-                  <a href="member.instagram">
+                  <a href={member.instagram}>
                     <i className="fab fa-instagram"></i>
                   </a>
                 ) : (
                   <></>
                 )}
-                {member.x ? (
-                  <a href="member.x">
-                    <i class="fa-brands fa-x-twitter"></i>
+                {member.twiiter ? (
+                  <a href={member.twiiter}>
+                    <i className="fa-brands fa-x-twitter"></i>
+                  </a>
+                ) : (
+                  <></>
+                )}
+                {member.github ? (
+                  <a href={member.github}>
+                    <i className="fa-brands fa-github"></i>
                   </a>
                 ) : (
                   <></>

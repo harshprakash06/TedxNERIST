@@ -36,7 +36,7 @@ function Footer() {
               <h3 className="font-semibold mb-2">Follow TEDxNERIST</h3>
               <div className="flex gap-3">
                 <a
-                  href="https://facebook.com"
+                  href="https://facebook.com/tedxnerist"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -49,7 +49,7 @@ function Footer() {
                   </div>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/tedxnerist/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -62,7 +62,7 @@ function Footer() {
                   </div>
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://instagram.com/tedxnerist"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -75,7 +75,7 @@ function Footer() {
                   </div>
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://twitter.com/tedxnerist"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -99,26 +99,130 @@ function Footer() {
               <div className="w-full md:w-1/2">
                 <h3 className="font-semibold mb-2 ">Programs</h3>
                 <ul className="space-y-1">
-                  <li>TEDx</li>
-                  <li>TED Fellows</li>
-                  <li>TED Ed</li>
-                  <li>TED Translators</li>
-                  <li>TED Institute</li>
-                  <li>TED Speakers Bureau</li>
-                  <li>The Audacious Project</li>
-                  <li>TED Courses</li>
-                  <li>TED@Work</li>
+                  <li>
+                    <a
+                      href="https://www.ted.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TEDx
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.ted.com/about/programs-initiatives/ted-fellows"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TED Fellows
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://ed.ted.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TED Ed
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.ted.com/about/programs-initiatives/ted-translators"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TED Translators
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.ted.com/about/programs-initiatives/ted-institute"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TED Institute
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://www.audaciousproject.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      The Audacious Project
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.ted.com/about/programs-initiatives/ted-courses"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TED Courses
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.ted.com/about/programs-initiatives/ted-at-work"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TED@Work
+                    </a>
+                  </li>
                 </ul>
               </div>
 
               <div className="w-full md:w-1/2">
                 <h3 className="font-semibold mb-2">Community</h3>
                 <ul className="space-y-1">
-                  <li>TED Speakers</li>
-                  <li>TED Organizers</li>
-                  <li>TED Translators</li>
-                  <li>TED Speakers</li>
-                  <li>TED Community</li>
+                  <li>
+                    <a
+                      href="https://www.ted.com/speakers"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TED Speakers
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.ted.com/participate/organize-a-local-tedx-event"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TED Organizers
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.ted.com/about/programs-initiatives/ted-translators"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TED Translators
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.ted.com/speakers"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TED Speakers
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://community.ted.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TED Community
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>

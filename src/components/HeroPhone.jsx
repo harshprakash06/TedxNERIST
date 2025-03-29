@@ -1,0 +1,137 @@
+import React, { useEffect, useRef, useState } from "react";
+import "../css/Hero.css";
+import { Navbar } from "./";
+
+function HeroPhone() {
+  const imageRef = useRef(null);
+  const sectionRef = useRef(null);
+  const textRef = useRef(null);
+  const totalFrames = 65;
+  const images = useRef([]);
+
+  const [loadProgress, setLoadProgress] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [showLoadingOverlay, setShowLoadingOverlay] = useState(true);
+
+  const getFrameSrc = (index) =>
+    `/images/animation/phone/intro-phone${String(index).padStart(2, "0")}.jpg`;
+
+  useEffect(() => {
+    let loadedCount = 0;
+    const promises = [];
+
+    for (let i = 0; i < totalFrames; i++) {
+      const promise = new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = getFrameSrc(i);
+        img.onload = () => {
+          loadedCount++;
+          setLoadProgress(Math.floor((loadedCount / totalFrames) * 100));
+          images.current[i] = img;
+          resolve();
+        };
+        img.onerror = reject;
+      });
+      promises.push(promise);
+    }
+
+    Promise.all(promises)
+      .then(() => setImagesLoaded(true))
+      .catch((error) => console.error("Error preloading images:", error));
+  }, []);
+
+  useEffect(() => {
+    if (imagesLoaded) {
+      const timer = setTimeout(() => setShowLoadingOverlay(false), 300);
+      return () => clearTimeout(timer);
+    }
+  }, [imagesLoaded]);
+
+  useEffect(() => {
+    if (!imagesLoaded) return;
+
+    const img = imageRef.current;
+    const section = sectionRef.current;
+    const text = textRef.current;
+    if (!img || !section || !text) return;
+
+    let animationFrame;
+
+    const updateFrame = () => {
+      const distance = window.scrollY - section.offsetTop;
+      const totalScroll = section.clientHeight - window.innerHeight;
+      let scrollProgress = distance / totalScroll;
+      scrollProgress = Math.max(0, Math.min(scrollProgress, 1));
+
+      const frameIndex = Math.floor(scrollProgress * (totalFrames - 1));
+      img.src = images.current[frameIndex]?.src || img.src;
+
+      if (scrollProgress < 0.5) {
+        text.style.position = "absolute";
+        text.style.top = `${100 - scrollProgress * 200}px`;
+      } else if (scrollProgress >= 0.5 && distance < totalScroll) {
+        text.style.position = "fixed";
+        text.style.top = "20px";
+      } else {
+        text.style.position = "absolute";
+        text.style.top = `${totalScroll}px`;
+      }
+      text.style.opacity = Math.min(1, scrollProgress * 2);
+
+      animationFrame = requestAnimationFrame(updateFrame);
+    };
+
+    const handleScroll = () => {
+      if (!animationFrame) {
+        animationFrame = requestAnimationFrame(updateFrame);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    updateFrame();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(animationFrame);
+    };
+  }, [imagesLoaded]);
+
+  return (
+    <>
+      <section className="vid" ref={sectionRef}>
+        {showLoadingOverlay == false && <Navbar />}
+        <div className="holder">
+          <img
+            ref={imageRef}
+            src={getFrameSrc(0)}
+            alt="Scroll Animation Frame"
+          />
+        </div>
+        <h1 ref={textRef} className="lighthouse-text">
+          LIGHTHOUSE APUS
+        </h1>
+      </section>
+      {showLoadingOverlay && (
+        <div className="loading-overlay fixed inset-0 flex items-center justify-center z-50 miau">
+          <span
+            className="relative text-7xl"
+            style={{ fontFamily: "Gilroy", color: "grey", opacity: "70%" }}
+          >
+            TEDxNERIST
+            <span
+              className="absolute top-0 left-0 loading-text overflow-hidden"
+              style={{
+                width: `${loadProgress}%`,
+                transition: "width 0.5s ease",
+              }}
+            >
+              TEDx<span style={{ color: "white" }}>NERIST</span>
+            </span>
+          </span>
+        </div>
+      )}
+    </>
+  );
+}
+
+export default HeroPhone;

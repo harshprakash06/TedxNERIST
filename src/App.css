@@ -101,5 +101,28 @@ button {
 .sponsor-section{
   margin-top: 10rem;
 }
+.ticket-sections{
+  margin-bottom: -3rem;
+}
+.Team-section{
+  margin-top: 4rem;
+}
 
+}
+.theme-section {
+  margin-bottom: 1rem; /* More space on mobile */
+}
+
+.about-section {
+  margin-bottom: 6rem; 
+}
+.reasons-section{
+  margin-bottom: 10rem;
+}
+
+.sponsor-section{
+margin-top: 10rem;
+}
+.ticket-sections{
+  margin-bottom: 20rem;
 }

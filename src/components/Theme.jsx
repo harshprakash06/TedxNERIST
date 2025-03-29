@@ -46,10 +46,16 @@ const Theme = () => {
             Inspired by the awe-inspiring constellation Apus—an elegant, vibrant
             bird-of-paradise soaring gracefully across the southern heavens—it
             symbolizes boundless curiosity, unbridled ambition, and the
-            courageous desire to venture into unexplored horizons.
+            courageous desire to venture into unexplored horizons. Seamlessly
+            merging the innovative spirit of technology's Accelerated Processing
+            Unit (APU) with a mosaic of diverse talents, perspectives, and
+            creative visions, Lighthouse Apus accelerates ingenuity, propelling
+            groundbreaking ideas forward. Ultimately, Lighthouse Apus shines a
+            dazzling light upon daring innovation, fostering collaborative
+            creativity, and uniting unique abilities in an inspired journey
+            toward boundless possibilities.
             <span className="theme-text-quotation rotate-180"></span>
           </p>
-          <div className="h-[200px] w-full bg-gray-400 rounded-4xl"></div>
         </div>
       </div>
     </>
@@ -81,9 +87,6 @@ const PhoneTheme = () => {
           <span className="theme-text-quotation rotate-180"></span>
         </p>
       </div>
-
-      {/* Grey Section Below Text */}
-      <div className="h-[150px] w-full bg-gray-400 rounded-4xl mt-8 mb-8"></div>
     </div>
   );
 };

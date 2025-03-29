@@ -5,7 +5,7 @@ const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
 
   const navItems = [
-    { label: "Home", href: "/home" },
+    { label: "Home", href: "/" },
     { label: "Speakers", href: "/speakers" },
     { label: "Team", href: "/team" },
     { label: "Support", href: "/support" },
@@ -14,7 +14,9 @@ const Navbar = () => {
   function isPhone() {
     return screen.width <= 800;
   }
-
+  const tempButtonClick = () => {
+    alert("Tickets are not open yet");
+  };
   return (
     <>
       {/* Navbar */}
@@ -70,10 +72,14 @@ const Navbar = () => {
             </div>
 
             <nav className="hidden space-x-10 md:flex md:items-center md:justify-center lg:space-x-16">
-              {["Home", "About", "Speaker", "Partner", "Team"].map((label) => (
+              {["Home", "About", "Team"].map((label) => (
                 <Link
                   key={label}
-                  to={`/${label.toLowerCase()}`}
+                  to={
+                    label.toLowerCase() === "team"
+                      ? `/team`
+                      : `/#${label.toLowerCase()}`
+                  }
                   className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
                 >
                   {label}
@@ -82,19 +88,28 @@ const Navbar = () => {
             </nav>
 
             <div className="hidden md:inline-flex items-center">
-              <Link to="/buyticket" className="custom-button">
+              <Link to="/comingsoon" className="custom-button">
                 <span className="text">Book Now →</span>
                 <img src={"/arrow.svg"} alt="Arrow" className="arrow-icon" />
               </Link>
+
+              {/* <button className="custom-button" onClick={tempButtonClick}>
+                <span className="text">Book Now</span>
+                <img src={"/arrow.svg"} alt="Arrow" className="arrow-icon" />
+              </button> */}
             </div>
           </div>
 
           {expanded && (
             <nav className="pt-8 pb-4 space-y-8">
-              {["Home", "About", "Speaker", "Partner", "Team"].map((label) => (
+              {["Home", "About", "Team"].map((label) => (
                 <Link
                   key={label}
-                  to={`/${label.toLowerCase()}`}
+                  to={
+                    label.toLowerCase() === "team"
+                      ? `/team`
+                      : `/#${label.toLowerCase()}`
+                  }
                   className="block text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
                 >
                   {label}
@@ -102,10 +117,14 @@ const Navbar = () => {
               ))}
 
               <div className="relative inline-flex items-center justify-center group">
-                <Link to="/buyticket" className="custom-button">
+                <Link to="/comingsoon" className="custom-button">
                   <span className="text">Book Now</span>
                   <img src={"/arrow.svg"} alt="Arrow" className="arrow-icon" />
                 </Link>
+                {/* <button className="custom-button" onClick={tempButtonClick}>
+                  <span className="text">Book Now</span>
+                  <img src={"/arrow.svg"} alt="Arrow" className="arrow-icon" />
+                </button> */}
               </div>
             </nav>
           )}

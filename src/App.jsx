@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import {
@@ -18,9 +18,31 @@ import {
   NoRefundPolicy,
   TermsAndConditions,
   TeamSection,
+  Ticket,
   Speaker,
+  TicketSection,
+  HeroPhone,
 } from "./components/index";
 import "./App.css";
+
+const isPhone = window.innerWidth >= 800;
+
+function SectionWrapper({ children, className }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { triggerOnce: true, threshold: 0.5 });
+
+  return (
+    <motion.div
+      ref={ref}
+      className={className}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 function App() {
   useEffect(() => {
@@ -30,50 +52,59 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ComingSoon />} />
+        <Route path="/comingsoon" element={<ComingSoon />} />
         <Route path="/buyticket" element={<TicketPurchase />} />
         <Route path="/ticket/:id" element={<TicketDownload />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/refund" element={<NoRefundPolicy />} />
         <Route path="/term" element={<TermsAndConditions />} />
+        <Route path="/2" element={<Ticket />} />
         <Route
           path="/team"
           element={
             <>
               <Navbar />
-              <TeamSection /> <Footer />
+              <div className="Team-section">
+                <TeamSection />
+              </div>
+
+              <Footer />
             </>
           }
         />
 
         <Route
-          path="/home"
+          path="/"
           element={
-            <>
-              <Hero />
+            <div id="Home">
+              {isPhone ? (
+                <Hero />
+              ) : (
+                <>
+                  <Navbar /> <HeroPhone />
+                </>
+              )}
               <div className="page-container">
-                <div className=" theme-section">
+                <SectionWrapper className="theme-section">
                   <Theme />
-                </div>
-                {/* <div className="speakers-section">
-                  <Speaker />
-                </div> */}
-                <div className=" about-section">
+                </SectionWrapper>
+                <SectionWrapper className="ticket-sections">
+                  <TicketSection />
+                </SectionWrapper>
+                <SectionWrapper className="about-section">
                   <About />
-                </div>
+                </SectionWrapper>
                 <PageDivider /> <PageDivider /> <PageDivider />
               </div>
-              <ReasonsToAttend />
-              <div className=" sponsor-section ">
-                <div id="sponsor">
-                  <Sponsors />
-                </div>
-
+              <SectionWrapper>
+                <ReasonsToAttend />
+              </SectionWrapper>
+              <SectionWrapper className="sponsor-section">
                 <div id="contact footer">
                   <Footer />
                 </div>
-              </div>
-            </>
+              </SectionWrapper>
+            </div>
           }
         />
       </Routes>
@@ -83,7 +114,6 @@ function App() {
 
 const ComingSoon = () => (
   <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white text-center">
-    {/* Logo */}
     <motion.img
       src="/logo.svg"
       alt="TEDxNERIST Logo"
@@ -100,7 +130,6 @@ const ComingSoon = () => (
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1 }}
     />
-
     <motion.h2
       className="text-3xl mt-2"
       initial={{ opacity: 0, y: -30 }}
@@ -118,12 +147,12 @@ const ComingSoon = () => (
       "The Indomitable Spirit"
     </motion.p>
     <motion.p
-      className="text-lg mt-4"
+      className="text-lg mt-4 font-semibold"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1.5, duration: 1 }}
     >
-      Stay Tuned!
+      🎟️ Ticket Booking Coming Soon!
     </motion.p>
   </div>
 );

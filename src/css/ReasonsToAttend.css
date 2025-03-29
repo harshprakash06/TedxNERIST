@@ -21,10 +21,12 @@
 }
 
 .reasons-title {
+  
   font-family: var(--textfont);
   color: var(--text);
   font-size: 114px;
   line-height: 1.4;
+  
   letter-spacing: 0.1rem;
 }
 

@@ -3,13 +3,43 @@ section.vid video{
   height: 100%;
   object-fit: cover;
 }
-
-section.vid{
-  height: 4000px;
+section.vid {
+  height: 2000px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
 }
 
+section.vid::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
 
 section.vid div.holder {
   position: sticky;
   top: 0;
+}
+
+.miau{
+  background-color: var(--background);
+}
+
+.loading-text{
+  color: var(--tedxred);
+}
+
+.lighthouse-text {
+  font-family: Cirka;
+  margin-top: 25rem;
+  font-size: 80px !important;
+  color: var(--tedxred);
+  opacity: 1; /* Fully visible */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition */
+  margin-left: 3rem !important;
+}
+
+
+@media (max-width : 800px) {
+  .lighthouse-text {
+    font-size: 50px !important;
+  }
 }

@@ -14,6 +14,9 @@ import NoRefundPolicy from "./RefundPolicy.jsx";
 import TermsAndConditions from "./TermsAndConditions.jsx";
 import TeamSection from "./TeamSection.jsx";
 import Speaker from "./Speakers.jsx";
+import Ticket from "./Ticket.jsx";
+import TicketSection from "./TicketSection.jsx";
+import HeroPhone from "./HeroPhone.jsx";
 export {
   TicketPurchase,
   TicketDownload,
@@ -30,4 +33,7 @@ export {
   TermsAndConditions,
   Speaker,
   TeamSection,
+  TicketSection,
+  Ticket,
+  HeroPhone,
 };
