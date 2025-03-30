@@ -32,8 +32,6 @@ const Team = [
     category: "NA",
     img: "/images/team/Chingkhei.jpeg",
     linkedin: "https://www.linkedin.com/in/chingkheinganba-haobam-8635671a1/",
-    instagram: "https://www.instagram.com/_xtemper_",
-
     github: "https://github.com/chkg2a",
   },
   {
