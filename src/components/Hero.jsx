@@ -6,6 +6,7 @@ function Hero() {
   const imageRef = useRef(null);
   const sectionRef = useRef(null);
   const textRef = useRef(null);
+  const divRef = useRef(null);
   const totalFrames = 60;
   const images = useRef([]);
 
@@ -53,6 +54,7 @@ function Hero() {
     const img = imageRef.current;
     const section = sectionRef.current;
     const text = textRef.current;
+    const div = divRef.current;
     if (!img || !section || !text) return;
 
     let animationFrame;
@@ -66,20 +68,8 @@ function Hero() {
       const frameIndex = Math.floor(scrollProgress * (totalFrames - 1));
       img.src = images.current[frameIndex]?.src || img.src;
 
-      if (scrollProgress < 0.5) {
-        text.style.position = "absolute";
-        text.style.top = `${100 - scrollProgress * 200}`;
-      } else {
-        text.style.position = "fixed";
-        text.style.top = "25rem";
-      }
-
-      if (distance >= totalScroll) {
-        text.style.position = "absolute";
-        text.style.top = `${totalScroll}px`;
-      }
-
       text.style.opacity = Math.min(1, scrollProgress * 2);
+      div.style.opacity = Math.min(1, scrollProgress * 2);
 
       animationFrame = requestAnimationFrame(updateFrame);
     };
@@ -110,9 +100,15 @@ function Hero() {
             alt="Scroll Animation Frame"
           />
         </div>
-        <h1 ref={textRef} className="lighthouse-text">
+        <h1 ref={textRef} className="lighthouse-text absolute bottom-48 left-0">
           LIGHTHOUSE APUS
         </h1>
+        <div ref={divRef} className="absolute -bottom-192 left-0">
+          <h1 className="lighthouse-text">
+            LIGHTHOUSE NEXT HEADING
+          </h1>
+          <p className="lighthouse-para">This is the paragraph</p>
+        </div>
       </section>
       {showLoadingOverlay && (
         <div className="loading-overlay fixed inset-0 flex items-center justify-center z-50 miau">
