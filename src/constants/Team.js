@@ -28,7 +28,7 @@ const Team = [
   },
   {
     name: "Chingkheinganba Haobam",
-    role: "Co-Organizer",
+    role: "Devops",
     category: "NA",
     img: "/images/team/Chingkhei.jpeg",
     linkedin: "https://www.linkedin.com/in/chingkheinganba-haobam-8635671a1/",

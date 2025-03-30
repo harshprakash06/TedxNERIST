@@ -13,16 +13,15 @@ import {
   ReasonsToAttend,
   Footer,
   PageDivider,
-  Sponsors,
   PrivacyPolicy,
   NoRefundPolicy,
   TermsAndConditions,
   TeamSection,
   Ticket,
-  Speaker,
   TicketSection,
   HeroPhone,
   ThreeDViewer,
+  Form,
 } from "./components/index";
 import "./App.css";
 import url from "./constants/config";
@@ -57,6 +56,7 @@ function App() {
         <Route path="/refund" element={<NoRefundPolicy />} />
         <Route path="/term" element={<TermsAndConditions />} />
         <Route path="/2" element={<Ticket />} />
+        <Route path="/form" element={<Form />} />
         <Route
           path="/team"
           element={

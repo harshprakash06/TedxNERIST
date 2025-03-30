@@ -18,6 +18,7 @@ import Ticket from "./Ticket.jsx";
 import TicketSection from "./TicketSection.jsx";
 import HeroPhone from "./HeroPhone.jsx";
 import ThreeDViewer from "./ThreeDViewer";
+import Form from "./Form.jsx";
 export {
   TicketPurchase,
   TicketDownload,
@@ -38,4 +39,5 @@ export {
   Ticket,
   ThreeDViewer,
   HeroPhone,
+  Form,
 };
