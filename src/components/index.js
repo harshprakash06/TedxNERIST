@@ -17,6 +17,7 @@ import Speaker from "./Speakers.jsx";
 import Ticket from "./Ticket.jsx";
 import TicketSection from "./TicketSection.jsx";
 import HeroPhone from "./HeroPhone.jsx";
+import ThreeDViewer from "./ThreeDViewer";
 export {
   TicketPurchase,
   TicketDownload,
@@ -35,5 +36,6 @@ export {
   TeamSection,
   TicketSection,
   Ticket,
+  ThreeDViewer,
   HeroPhone,
 };

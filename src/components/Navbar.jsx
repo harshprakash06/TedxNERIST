@@ -20,7 +20,11 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <header className={`py-4 sm:py-6 ${isPhone() ? "-" : ""} header`}>
+      <header
+        className={`py-4 sm:py-6 ${isPhone() ? "-" : ""} header ${
+          expanded ? "bg-black!" : ""
+        }`}
+      >
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="shrink-0">
@@ -110,7 +114,7 @@ const Navbar = () => {
                       ? `/team`
                       : `/#${label.toLowerCase()}`
                   }
-                  className="block text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
+                  className="block text-base font-normal text-gray-400 transition-all duration-200 hover:text-white "
                 >
                   {label}
                 </Link>

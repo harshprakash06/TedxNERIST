@@ -68,14 +68,17 @@ function Hero() {
 
       if (scrollProgress < 0.5) {
         text.style.position = "absolute";
-        text.style.top = `${100 - scrollProgress * 200}px`;
-      } else if (scrollProgress >= 0.5 && distance < totalScroll) {
-        text.style.position = "fixed";
-        text.style.top = "20px";
+        text.style.top = `${100 - scrollProgress * 200}`;
       } else {
+        text.style.position = "fixed";
+        text.style.top = "25rem";
+      }
+
+      if (distance >= totalScroll) {
         text.style.position = "absolute";
         text.style.top = `${totalScroll}px`;
       }
+
       text.style.opacity = Math.min(1, scrollProgress * 2);
 
       animationFrame = requestAnimationFrame(updateFrame);

@@ -22,8 +22,10 @@ import {
   Speaker,
   TicketSection,
   HeroPhone,
+  ThreeDViewer,
 } from "./components/index";
 import "./App.css";
+import url from "./constants/config";
 
 const isPhone = window.innerWidth >= 800;
 
@@ -87,8 +89,8 @@ function App() {
                 <SectionWrapper className="ticket-sections">
                   <TicketSection />
                 </SectionWrapper>
-                <SectionWrapper className="about-section">
-                  <About />
+                <SectionWrapper className="about-section" id="about">
+                  <About id="about" />
                 </SectionWrapper>
                 <PageDivider /> <PageDivider /> <PageDivider />
               </div>
@@ -110,14 +112,7 @@ function App() {
 
 const ComingSoon = () => (
   <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white text-center">
-    <motion.img
-      src="/logo.svg"
-      alt="TEDxNERIST Logo"
-      className="w-60 mb-6"
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1 }}
-    />
+    <ThreeDViewer modelPath="/model/logo.glb" />
     <motion.img
       src="/logo_wl.webp"
       alt="TEDxNERIST Logo"

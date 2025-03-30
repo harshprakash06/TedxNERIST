@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PageDivider from "./PageDivider";
+import ThreeDViewer from "./ThreeDViewer";
 import "../css/Theme.css";
 
 const useIsPhone = () => {
@@ -30,9 +30,9 @@ const Theme = () => {
             alt="Theme 2025"
             className="w-[60%] h-auto rounded-lg shadow-lg"
           />
-          <img
-            src="/logo.svg"
-            className="w-[60%] h-auto rounded-lg shadow-lg"
+          <ThreeDViewer
+            modelPath="/model/logo.glb"
+            className="w-[60%] h-auto "
           />
         </div>
 
@@ -71,10 +71,7 @@ const PhoneTheme = () => {
           alt="Theme 2025"
           className="w-[40%] sm:w-[40%] h-auto rounded-lg shadow-lg"
         />
-        <img
-          src="/logo.svg"
-          className="w-[30%] sm:w-[30%] h-auto rounded-lg shadow-lg"
-        />
+        <ThreeDViewer modelPath="/model/logo.glb" className="w-[60%] h-auto " />
       </div>
 
       {/* Text Section */}

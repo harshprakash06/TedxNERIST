@@ -29,13 +29,12 @@ section.vid div.holder {
 
 .lighthouse-text {
   font-family: Cirka;
-  margin-top: 25rem;
+
   font-size: 80px !important;
   color: var(--tedxred);
-  opacity: 1; /* Fully visible */
-  transition: opacity 0.5s ease-in-out; /* Smooth transition */
-  margin-left: 3rem !important;
-}
+  opacity: 1;
+  margin-left: 3rem !important;} 
+ 
 
 
 @media (max-width : 800px) {

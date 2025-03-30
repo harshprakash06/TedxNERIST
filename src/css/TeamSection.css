@@ -111,30 +111,37 @@
   
 @media (max-width: 768px) {
     .team-heading {
-        font-size: 45px !important;
+        font-size: 40px !important;
 
 
     }
 
 }
 
-@media (max-width: 480px) {
-    .team-heading {
-        font-size: 25px;
-    }
-}
+
 
 /* **Fix Oval Issue for Screens <= 700px** */
 @media (max-width: 800px) {
+  .caption h3{
+    font-size: 1rem;
+  }
+  .caption p{
+    font-size: 0.7rem;
+  }
+
 
     .team-members-row {
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
         gap: 6px;
     }
+    .profile-card:hover .caption {
+      transform: translateY(-8rem); /* Almost touching the image */
+  }
 
     .profile-card {
-        width: 90%; /* Take full width */
+      width: 80%; /* Ensures responsiveness */
+      max-width: 150px; /* Prevents oversizing */
         border-radius: 50%;
         margin-bottom: 20px;
         background-color: transparent;
@@ -144,10 +151,13 @@
     .profile-card:hover{
         background-color: white;
         box-shadow: 0 0 22px #3336;
+        height: 17rem; /* Prevents overflow */
+
 
     }
     .profile-card .img{
-        width: 135%;
+        width: 130%;
+
 
     }
     .golugolu{
@@ -163,5 +173,5 @@
   }
   
 .team-heading-mobile{
-    margin-top: 80px;
+    margin-top: 8rem;
 }
