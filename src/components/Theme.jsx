@@ -54,7 +54,7 @@ const Theme = () => {
             dazzling light upon daring innovation, fostering collaborative
             creativity, and uniting unique abilities in an inspired journey
             toward boundless possibilities.
-            <span className="theme-text-quotation rotate-180"></span>
+            <span className="theme-text-quotation rotate-180 bottom-[0.5rem]"></span>
           </p>
         </div>
       </div>
@@ -77,11 +77,11 @@ const PhoneTheme = () => {
       {/* Text Section */}
       <div className="w-full text-center mt-8 px-4 flex flex-col gap-6">
         <p className="theme-text leading-7 relative">
-          <span className="theme-text-quotation top-[-0.5rem] left-[-1.5rem]"></span>
+          <span className="theme-text-quotation top-[-0.5rem] left-[1.2rem]"></span>
           <span className="italic">Lighthouse Apus</span> is a beacon of
           exploration, guiding through uncharted realms. Inspired by Apus, the
           vibrant bird-of-paradise, it symbolizes curiosity and ambition.
-          <span className="theme-text-quotation rotate-180"></span>
+          <span className="theme-text-quotation rotate-180 bottom-[0.5rem]"></span>
         </p>
       </div>
     </div>
