@@ -92,12 +92,12 @@ function App() {
                 <SectionWrapper className="about-section" id="about">
                   <About id="about" />
                 </SectionWrapper>
-                <PageDivider /> <PageDivider /> <PageDivider />
               </div>
               <SectionWrapper>
                 <ReasonsToAttend />
               </SectionWrapper>
-              <SectionWrapper className="sponsor-section">
+              {/* <SectionWrapper className="sponsor-section"> */}
+              <SectionWrapper className="">
                 <div id="contact footer">
                   <Footer />
                 </div>
