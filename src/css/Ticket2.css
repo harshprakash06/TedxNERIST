@@ -12,6 +12,9 @@
     max-width: 100vh; /* Limit maximum size */
     position: relative;
     text-align: center; /* Ensures content is centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .ticket-image {
