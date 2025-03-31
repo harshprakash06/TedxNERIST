@@ -36,7 +36,7 @@ const StudentForm = () => {
       try {
         const formattedRegNo = input.trim();
         const res = await fetch(
-          `http://localhost:5300/api/student/${formattedRegNo}`
+          `https://te-dx-form-backend.vercel.app/api/student/${formattedRegNo}`
         );
 
         if (res.ok) {
@@ -69,13 +69,16 @@ const StudentForm = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5300/api/student", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(studentData),
-      });
+      const response = await fetch(
+        "https://te-dx-form-backend.vercel.app/api/student",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(studentData),
+        }
+      );
 
       if (response.ok) {
         console.log("Student data saved successfully");
