@@ -24,22 +24,22 @@ const Theme = () => {
     <>
       <div className="flex flex-col md:flex-row items-start justify-center p-8 text-white mx-0 relative w-full pb-[15%]">
         {/* Left Side - Image */}
-        <div className="w-full md:w-[30%] md:absolute top-6 flex flex-col justify-start left-0">
+        <div className="w-full md:w-[20%] md:absolute top-6 flex flex-col justify-start left-0">
           <img
             src="/images/theme2025.svg"
             alt="Theme 2025"
-            className="w-[60%] h-auto rounded-lg shadow-lg"
+            className="h-auto rounded-lg shadow-lg"
           />
           <ThreeDViewer
             modelPath="/model/logo.glb"
-            className="w-[60%] h-auto "
+            className="h-auto"
           />
         </div>
 
         {/* Right Side - Text */}
         <div className="w-full text-left px-0 md:ml-[20%] mt-[1%] flex flex-col gap-12 pl-5">
           <p className="mt-3 theme-text mr-0 md:leading-14 relative">
-            <span className="theme-text-quotation top-[-0.5rem] left-[-1.5rem]"></span>
+            <span className="theme-text-quotation translate-x-[-1.5rem] translate-y-[-0.5rem]"></span>
             <span className="italic">Lighthouse Apus</span> embodies a radiant
             beacon, illuminating pathways toward imaginative discovery and
             guiding explorers through uncharted realms with clarity and purpose.
@@ -54,7 +54,7 @@ const Theme = () => {
             dazzling light upon daring innovation, fostering collaborative
             creativity, and uniting unique abilities in an inspired journey
             toward boundless possibilities.
-            <span className="theme-text-quotation rotate-180"></span>
+            <span className="theme-text-quotation rotate-180 bottom-[0.5rem]"></span>
           </p>
         </div>
       </div>
@@ -77,7 +77,7 @@ const PhoneTheme = () => {
       {/* Text Section */}
       <div className="w-full text-center mt-8 px-4 flex flex-col gap-6">
         <p className="theme-text leading-7 relative">
-          <span className="theme-text-quotation top-[-0.5rem] left-[-1.5rem]"></span>
+          <span className="theme-text-quotation translate-x-[-1.5rem] translate-y-[-0.5rem]"></span>
           <span className="italic">Lighthouse Apus</span> is a beacon of
           exploration, guiding through uncharted realms. Inspired by Apus, the
           vibrant bird-of-paradise, it symbolizes curiosity and ambition.

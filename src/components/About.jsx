@@ -6,19 +6,17 @@ import "../css/ReasonsToAttend.css";
 import PageDivider from "./PageDivider";
 const About = () => {
   return (
-    <div className="min-h-screen relative">
+    <div id="about" className="min-h-screen relative">
       {/* PageDivider Positioned Slightly Higher on Mobile */}
       <div className="relative -mt-8 sm:-mt-10 md:-mt-12 lg:-mt-16">
         <PageDivider />
       </div>
-
       {/* Title Positioned for Overlap */}
       <div className="w-full flex items-center justify-center relative -mt-10 sm:-mt-12 md:-mt-16 lg:-mt-20">
         <div className="container-reasons-title">
           <h1 className="reasons-title">About Us</h1>
         </div>
       </div>
-
       {/* Cards Section (No Width Change) */}
       <div className="container-about-us">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-8">

@@ -61,11 +61,11 @@
     font-size: 15px;
     color: var(--textred);
     font-family: Gilroy;
-    margin: 2px 0 0px 0;
+
   }
   .caption .social-links a{
     color: #333;
-    margin-right: 15px;
+    margin-right: 0.51rem;
     font-size: 21px;
     transition: .6s;
   }
@@ -133,7 +133,7 @@
     .team-members-row {
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
-        gap: 6px;
+        gap: 6px; 
     }
     .profile-card:hover .caption {
       transform: translateY(-8rem); /* Almost touching the image */
@@ -149,7 +149,7 @@
 
     }
     .profile-card:hover{
-        background-color: white;
+        background-color: #ececec;
         box-shadow: 0 0 22px #3336;
         height: 17rem; /* Prevents overflow */
 

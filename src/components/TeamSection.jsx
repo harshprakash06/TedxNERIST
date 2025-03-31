@@ -18,13 +18,17 @@ const TeamSection = () => {
   }, []);
 
   return (
-    <div className="team-container pr-20  pl-20">
+    <div className="team-container">
       {isPhone ? (
-        <div className="w-full flex items-center justify-center translate-y-[-50%] team-heading-mobile">
-          <div className=" inline-block relative">
-            <h1 className="reasons-title text-xl font-bold whitespace-nowrap translate-y-[10px] mt-9">
-              Meet our Team
-            </h1>
+        <div className="pt-32 pb-20 relative ml-4">
+          <div className="relative -mt-8 sm:-mt-10 md:-mt-12 lg:-mt-16">
+            <PageDivider />
+          </div>
+
+          <div className="w-full flex items-center justify-center relative -mt-10 sm:-mt-12 md:-mt-16 lg:-mt-20">
+            <div className="container-reasons-title">
+              <h1 className="reasons-title">Meet our Team</h1>
+            </div>
           </div>
         </div>
       ) : (
