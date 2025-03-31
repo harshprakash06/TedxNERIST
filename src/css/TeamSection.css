@@ -1,177 +1,167 @@
-  .main{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  }
-  .profile-card{
-    position: relative;
-    font-family: OverpassMono;
-    width: 250px;
-    height: 250px;
-    background: #fff;
-    padding: 30px;
-    border-radius: 50%;
-    box-shadow: 0 0 22px #3336;
-    transition: .6s;
-    margin: 0 25px;
-  }
-  .profile-card:hover{
-    border-radius: 10px;
-    height: 300px;
-  }
-  .profile-card .img{
-    margin-bottom: 10px;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: .6s;
-    z-index: 99;
-  }
-  .profile-card:hover .img{
-    transform: translateY(-60px);
-  }
-  .img img{
-    width: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 22px #3336;
-    transition: .6s;
-  }
-  .profile-card:hover img{
-    border-radius: 10px;
-  }
-  .caption{
-    margin-top: -1rem;
-    text-align: center;
-    transform: translateY(-80px);
-    opacity: 0;
-    transition: .6s;
-  }
-  .profile-card:hover .caption{
-    opacity: 1;
-  }
-  .caption h3{
-    font-size: 21px;
-    font-family: Gilroy;
-    color: black;
-  }
-  .caption p{
-    font-size: 15px;
-    color: var(--textred);
-    font-family: Gilroy;
-    margin: 2px 0 0px 0;
-  }
-  .caption .social-links a{
-    color: #333;
-    margin-right: 15px;
-    font-size: 21px;
-    transition: .6s;
-  }
-  .social-links a:hover{
-    color: #0c52a1;
-  }
-  .team-heading {
-    padding-top:70px;
-    font-size: 70px !important;
-    text-align: center;
-    margin: 0 auto;
-    padding-bottom: 30px;
-    font-family: s !important;
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.team-cat-name{
-    padding-top: 80px;
-    font-size: 40px;
-    font-family: Gilroy !important;
-    text-align: center;
-    margin: 0 auto;
-    padding-bottom: 45px;
+.profile-card {
+  position: relative;
+  font-family: OverpassMono;
+  width: 250px;
+  height: 250px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 50%;
+  box-shadow: 0 0 22px #3336;
+  transition: 0.6s;
+  margin: 0 25px;
+}
+.profile-card:hover {
+  border-radius: 10px;
+  height: 300px;
+}
+.profile-card .img {
+  margin-bottom: 10px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: 0.6s;
+  z-index: 99;
+}
+.profile-card:hover .img {
+  transform: translateY(-60px);
+}
+.img img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 22px #3336;
+  transition: 0.6s;
+}
+.profile-card:hover img {
+  border-radius: 10px;
+}
+.caption {
+  margin-top: -1rem;
+  text-align: center;
+  transform: translateY(-80px);
+  opacity: 0;
+  transition: 0.6s;
+}
+.profile-card:hover .caption {
+  opacity: 1;
+}
+.caption h3 {
+  font-size: 21px;
+  font-family: Gilroy;
+  color: black;
+}
+.caption p {
+  font-size: 15px;
+  color: var(--textred);
+  font-family: Gilroy;
+  margin: 2px 0 0px 0;
+}
+.caption .social-links a {
+  color: #333;
+  margin-right: 15px;
+  font-size: 21px;
+  transition: 0.6s;
+}
+.social-links a:hover {
+  color: #0c52a1;
+}
+.team-heading {
+  padding-top: 70px;
+  font-size: 70px !important;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  font-family: s !important;
+}
+.team-cat-name {
+  padding-top: 80px;
+  font-size: 40px;
+  font-family: Gilroy !important;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 45px;
 }
 .team-members-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Adjust spacing between items */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjust spacing between items */
 }
 
-  
-  .profile-card {
-    margin-bottom: 40px; /* Adjust the value as needed */
-  }
-
-
-.golugolu{
-    padding-top: 250px;
-    padding-bottom: 100px;
+.profile-card {
+  margin-bottom: 40px; /* Adjust the value as needed */
 }
-.team-golu{
-    font-size: 80px;
+
+.golugolu {
+  padding-top: 250px;
+  padding-bottom: 100px;
 }
-  
+.team-golu {
+  font-size: 80px;
+}
+
 @media (max-width: 768px) {
-    .team-heading {
-        font-size: 40px !important;
-
-
-    }
-
+  .team-heading {
+    font-size: 40px !important;
+  }
 }
-
-
 
 /* **Fix Oval Issue for Screens <= 700px** */
 @media (max-width: 800px) {
-  .caption h3{
+  .team-members-row {
+    gap: 100px;
+  }
+  .caption h3 {
     font-size: 1rem;
   }
-  .caption p{
+  .caption p {
     font-size: 0.7rem;
   }
 
-
-    .team-members-row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 6px;
-    }
-    .profile-card:hover .caption {
-      transform: translateY(-8rem); /* Almost touching the image */
+  .profile-card .caption {
+    opacity: 1;
+    transform: translateY(-80px);
   }
 
-    .profile-card {
-      width: 80%; /* Ensures responsiveness */
-      max-width: 150px; /* Prevents oversizing */
-        border-radius: 50%;
-        margin-bottom: 20px;
-        background-color: transparent;
-        box-shadow: none;
-
-    }
-    .profile-card:hover{
-        background-color: white;
-        box-shadow: 0 0 22px #3336;
-        height: 17rem; /* Prevents overflow */
-
-
-    }
-    .profile-card .img{
-        width: 130%;
-
-
-    }
-    .golugolu{
-        padding-top: 140px;
-        padding-bottom: 70px;
-    }
-
+  .profile-card {
+    width: 100%; /* Ensures responsiveness */
+    max-width: 250px; /* Prevents oversizing */
+    border-radius: 50%;
+    margin-bottom: 20px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .profile-card {
+    background-color: white;
+    box-shadow: 0 0 22px #3336;
+    height: 17rem; /* Prevents overflow */
+    border-radius: 10px;
+  }
+  .profile-card .img {
+    width: 100%;
+    transform: translateY(-80px);
+  }
+  .profile-card .img img {
+    border-radius: 10px;
+  }
+  .golugolu {
+    padding-top: 140px;
+    padding-bottom: 70px;
+  }
 }
 .container-reasons-title-m {
-    display: none;
-    box-sizing: none; /* Ensures padding doesn’t affect size */
-    min-width: none ; /* Ensures it only takes as much space as text */
-  }
-  
-.team-heading-mobile{
-    margin-top: 8rem;
+  display: none;
+  box-sizing: none; /* Ensures padding doesn’t affect size */
+  min-width: none; /* Ensures it only takes as much space as text */
 }
+
+.team-heading-mobile {
+  margin-top: 8rem;
+}
+
