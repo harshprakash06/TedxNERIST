@@ -24,15 +24,15 @@ const Theme = () => {
     <>
       <div className="flex flex-col md:flex-row items-start justify-center p-8 text-white mx-0 relative w-full pb-[15%]">
         {/* Left Side - Image */}
-        <div className="w-full md:w-[30%] md:absolute top-6 flex flex-col justify-start left-0">
+        <div className="w-full md:w-[20%] md:absolute top-6 flex flex-col justify-start left-0">
           <img
             src="/images/theme2025.svg"
             alt="Theme 2025"
-            className="w-[60%] h-auto rounded-lg shadow-lg"
+            className="h-auto rounded-lg shadow-lg"
           />
           <ThreeDViewer
             modelPath="/model/logo.glb"
-            className="w-[60%] h-auto "
+            className="h-auto"
           />
         </div>
 
