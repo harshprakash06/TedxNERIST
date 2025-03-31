@@ -4,6 +4,7 @@ import "../css/ReasonsToAttend.css";
 import { useState, useEffect } from "react";
 
 import ReasonsCard from "./ReasonsCard";
+import PageDivider from "./PageDivider";
 
 const ReasonsToAttend = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -17,12 +18,14 @@ const ReasonsToAttend = () => {
   }, []);
 
   return (
-    <div className="min-h-[160vh]">
-      <div>
-        <div className="w-full flex items-center justify-center translate-y-[-50%] ">
-          <div className="container-reasons-title">
-            <h1 className="reasons-title">Reasons to Attend</h1>
-          </div>
+    <div className="min-h-[100vh]">
+      <div className="relative -mt-8 sm:-mt-10 md:-mt-12 lg:-mt-16">
+        <PageDivider />
+      </div>
+
+      <div className="w-full flex items-center justify-center relative -mt-10 sm:-mt-12 md:-mt-16 lg:-mt-20">
+        <div className="container-reasons-title">
+          <h1 className="reasons-title">Reasons to Attend</h1>
         </div>
       </div>
       <div className="flex justify-center mt-18">
