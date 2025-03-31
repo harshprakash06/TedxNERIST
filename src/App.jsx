@@ -93,7 +93,7 @@ function App() {
                   <About id="about" />
                 </SectionWrapper>
               </div>
-              <SectionWrapper>
+              <SectionWrapper className="reasons-section">
                 <ReasonsToAttend />
               </SectionWrapper>
               {/* <SectionWrapper className="sponsor-section"> */}
