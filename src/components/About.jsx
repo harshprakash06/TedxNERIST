@@ -6,7 +6,7 @@ import "../css/ReasonsToAttend.css";
 import PageDivider from "./PageDivider";
 const About = () => {
   return (
-    <div className="min-h-screen relative">
+    <div id="about" className="min-h-screen relative">
       {/* PageDivider Positioned Slightly Higher on Mobile */}
       <div className="relative -mt-8 sm:-mt-10 md:-mt-12 lg:-mt-16">
         <PageDivider />

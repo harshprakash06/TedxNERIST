@@ -76,19 +76,21 @@ const Navbar = () => {
             </div>
 
             <nav className="hidden space-x-10 md:flex md:items-center md:justify-center lg:space-x-16">
-              {["Home", "About", "Team"].map((label) => (
-                <Link
+              {["Home", "About"].map((label) => (
+                <a
                   key={label}
-                  to={
-                    label.toLowerCase() === "team"
-                      ? `/team`
-                      : `/#${label.toLowerCase()}`
-                  }
-                  className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
+                  href={`/#${label.toLowerCase()}`}
+                  className="block text-base font-normal text-gray-400 transition-all duration-200 hover:text-white "
                 >
                   {label}
-                </Link>
+                </a>
               ))}
+              <Link
+                to="/team"
+                className="block text-base font-normal text-gray-400 transition-all duration-200 hover:text-white "
+              >
+                Team
+              </Link>
             </nav>
 
             <div className="hidden md:inline-flex items-center">
@@ -106,19 +108,21 @@ const Navbar = () => {
 
           {expanded && (
             <nav className="pt-8 pb-4 space-y-8">
-              {["Home", "About", "Team"].map((label) => (
-                <Link
+              {["Home", "About"].map((label) => (
+                <a
                   key={label}
-                  to={
-                    label.toLowerCase() === "team"
-                      ? `/team`
-                      : `/#${label.toLowerCase()}`
-                  }
+                  href={`/#${label.toLowerCase()}`}
                   className="block text-base font-normal text-gray-400 transition-all duration-200 hover:text-white "
                 >
                   {label}
-                </Link>
+                </a>
               ))}
+              <Link
+                to="/team"
+                className="block text-base font-normal text-gray-400 transition-all duration-200 hover:text-white "
+              >
+                Team
+              </Link>
 
               <div className="relative inline-flex items-center justify-center group">
                 <Link to="/comingsoon" className="custom-button">
