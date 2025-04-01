@@ -22,7 +22,7 @@ const Theme = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row items-start justify-center p-8 text-white mx-0 relative w-full pb-[15%]">
+      <div className="flex flex-col md:flex-row items-start justify-center p-8 text-white mx-0 relative w-full">
         {/* Left Side - Image */}
         <div className="w-full md:w-[20%] md:absolute top-6 flex flex-col justify-start left-0">
           <img
@@ -30,10 +30,7 @@ const Theme = () => {
             alt="Theme 2025"
             className="h-auto rounded-lg shadow-lg"
           />
-          <ThreeDViewer
-            modelPath="/model/logo.glb"
-            className="h-auto"
-          />
+          <ThreeDViewer modelPath="/model/logo.glb" className="h-auto" />
         </div>
 
         {/* Right Side - Text */}

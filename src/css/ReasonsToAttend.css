@@ -79,7 +79,7 @@
     font-size: 2rem;
   }
   .reasons-card-description {
-    font-size: 1rem;
+    font-size: 0rem;
   }
 }
 @media (max-width: 768px){

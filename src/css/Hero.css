@@ -26,31 +26,3 @@ section.vid div.holder {
 .loading-text{
   color: var(--tedxred);
 }
-
-.lighthouse-text {
-  font-family: Cirka;
-
-  font-size: 80px !important;
-  color: var(--tedxred);
-  opacity: 1;
-  margin-left: 3rem !important;
-} 
- 
-.lighthouse-para {
-  font-family: Cirka;
-
-  font-size: 48px !important;
-  color: var(--tedxred);
-  opacity: 1;
-  margin-left: 3rem !important;
-} 
-
-
-@media (max-width : 800px) {
-  .lighthouse-text {
-    font-size: 50px !important;
-  }
-  .lighthouse-para {
-    font-size: 30px !important;
-  }
-}

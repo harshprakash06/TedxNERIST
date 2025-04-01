@@ -75,7 +75,7 @@ function App() {
           path="/"
           element={
             <div id="Home">
-              {isPhone ? (
+              {false ? (
                 <Hero />
               ) : (
                 <>

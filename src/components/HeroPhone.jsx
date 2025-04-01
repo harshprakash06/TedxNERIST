@@ -1,45 +1,92 @@
 import React, { useEffect, useRef, useState } from "react";
-import "../css/Hero.css";
+import "../css/HeroPhone.css";
 import { Navbar } from "./";
 
 function HeroPhone() {
   const imageRef = useRef(null);
   const sectionRef = useRef(null);
-  const textRef = useRef(null);
-  const totalFrames = 65;
-  const images = useRef([]);
+  const totalFrames = 60;
+  const images = useRef(Array(totalFrames).fill(null));
 
   const [loadProgress, setLoadProgress] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [showLoadingOverlay, setShowLoadingOverlay] = useState(true);
+  const [text, setText] = useState("LIGHTHOUSE APUS");
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isScrollComplete, setIsScrollComplete] = useState(false);
+  const [textOpacity, setTextOpacity] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(false); // <-- Add the state
 
+  // Device detection
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  // Function to get the appropriate frame src based on device type
   const getFrameSrc = (index) =>
-    `/images/animation/phone/intro-phone${String(index).padStart(2, "0")}.jpg`;
+    isMobile
+      ? `/images/animation/phone/intro-phone${String(index).padStart(
+          2,
+          "0"
+        )}.jpg`
+      : `/images/animation/intro${String(index).padStart(2, "0")}.jpg`;
 
+  // Smooth text transition function
+  const changeTextWithTransition = (newText) => {
+    // Prevent changing to the same text or during an ongoing transition
+    if (text === newText || isTransitioning) return;
+
+    setIsTransitioning(true);
+    setTextOpacity(0); // Fade out current text
+
+    // Wait for the opacity transition to finish before updating text
+    setTimeout(() => {
+      setText(newText); // Change text
+      setTextOpacity(1); // Fade in new text
+
+      // After the fade-in, reset the transition state
+      setIsTransitioning(false);
+    }, 300); // Match the duration of the opacity fade-out (300ms)
+  };
+
+  // Preload all images at component mount
   useEffect(() => {
+    let isMounted = true;
     let loadedCount = 0;
-    const promises = [];
+    const tempImages = Array(totalFrames).fill(null);
 
     for (let i = 0; i < totalFrames; i++) {
-      const promise = new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = getFrameSrc(i);
-        img.onload = () => {
-          loadedCount++;
+      const img = new Image();
+      img.src = getFrameSrc(i);
+      img.onload = () => {
+        if (!isMounted) return;
+
+        loadedCount++;
+        tempImages[i] = img;
+
+        if (isMounted) {
           setLoadProgress(Math.floor((loadedCount / totalFrames) * 100));
-          images.current[i] = img;
-          resolve();
-        };
-        img.onerror = reject;
-      });
-      promises.push(promise);
+          if (loadedCount === totalFrames) {
+            images.current = tempImages;
+            setImagesLoaded(true);
+          }
+        }
+      };
+      img.onerror = () => {
+        if (!isMounted) return;
+        console.error(`Failed to load image: ${getFrameSrc(i)}`);
+        loadedCount++;
+        // Continue loading even if some images fail
+        if (loadedCount === totalFrames && isMounted) {
+          setImagesLoaded(true);
+        }
+      };
     }
 
-    Promise.all(promises)
-      .then(() => setImagesLoaded(true))
-      .catch((error) => console.error("Error preloading images:", error));
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
+  // Hide loading overlay after images are loaded
   useEffect(() => {
     if (imagesLoaded) {
       const timer = setTimeout(() => setShowLoadingOverlay(false), 300);
@@ -47,70 +94,125 @@ function HeroPhone() {
     }
   }, [imagesLoaded]);
 
+  // Handle scroll animation
   useEffect(() => {
     if (!imagesLoaded) return;
 
     const img = imageRef.current;
     const section = sectionRef.current;
-    const text = textRef.current;
-    if (!img || !section || !text) return;
 
-    let animationFrame;
+    if (!img || !section) return;
+
+    let animationFrame = null;
+    let lastScrollProgress = scrollProgress;
 
     const updateFrame = () => {
-      const distance = window.scrollY - section.offsetTop;
-      const totalScroll = section.clientHeight - window.innerHeight;
-      let scrollProgress = distance / totalScroll;
-      scrollProgress = Math.max(0, Math.min(scrollProgress, 1));
+      // Calculate how far we've scrolled into the section
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
 
-      const frameIndex = Math.floor(scrollProgress * (totalFrames - 1));
-      img.src = images.current[frameIndex]?.src || img.src;
+      const newDistance = Math.max(0, scrollY - sectionTop);
+      const newTotalScroll = sectionHeight - viewportHeight;
+      let newScrollProgress =
+        newTotalScroll <= 0 ? 0 : newDistance / newTotalScroll;
+      newScrollProgress = Math.max(0, Math.min(newScrollProgress, 1));
 
-      if (scrollProgress < 0.5) {
-        text.style.position = "absolute";
-        text.style.top = `${100 - scrollProgress * 200}px`;
-      } else if (scrollProgress >= 0.5 && distance < totalScroll) {
-        text.style.position = "fixed";
-        text.style.top = "20px";
-      } else {
-        text.style.position = "absolute";
-        text.style.top = `${totalScroll}px`;
+      // Only update if there's a meaningful change to reduce unnecessary rerenders
+      if (Math.abs(newScrollProgress - lastScrollProgress) > 0.001) {
+        setScrollProgress(newScrollProgress);
+        lastScrollProgress = newScrollProgress;
+
+        // Check if we've reached the end of our animation sequence
+        if (newScrollProgress >= 0.95 && !isScrollComplete) {
+          setIsScrollComplete(true);
+          changeTextWithTransition("FINAL TEXT");
+        } else if (newScrollProgress < 0.95 && isScrollComplete) {
+          setIsScrollComplete(false);
+        }
+
+        // Update frame image with smooth interpolation
+        const frameIndexFloat = newScrollProgress * (totalFrames - 1);
+        const frameIndex = Math.min(
+          Math.floor(frameIndexFloat),
+          totalFrames - 1
+        );
+
+        if (
+          images.current[frameIndex] &&
+          img.src !== images.current[frameIndex].src
+        ) {
+          img.src = images.current[frameIndex].src;
+        }
+
+        // Update text based on scroll progress
+        if (!isScrollComplete && !isTransitioning) {
+          if (newScrollProgress < 0.25) {
+            changeTextWithTransition("LIGHTHOUSE APUS");
+          } else if (newScrollProgress < 0.5) {
+            changeTextWithTransition("SCROLL TO EXPLORE");
+          } else if (newScrollProgress < 0.75) {
+            changeTextWithTransition("ALMOST THERE");
+          } else if (newScrollProgress < 0.95) {
+            changeTextWithTransition("GETTING CLOSER");
+          }
+        }
       }
-      text.style.opacity = Math.min(1, scrollProgress * 2);
 
       animationFrame = requestAnimationFrame(updateFrame);
     };
 
-    const handleScroll = () => {
-      if (!animationFrame) {
-        animationFrame = requestAnimationFrame(updateFrame);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    updateFrame();
+    animationFrame = requestAnimationFrame(updateFrame);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      cancelAnimationFrame(animationFrame);
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
     };
-  }, [imagesLoaded]);
+  }, [imagesLoaded, isScrollComplete, isTransitioning, scrollProgress]);
 
   return (
     <>
       <section className="vid" ref={sectionRef}>
-        {showLoadingOverlay == false && <Navbar />}
+        {!showLoadingOverlay && <Navbar />}
         <div className="holder">
           <img
             ref={imageRef}
-            src={getFrameSrc(0)}
+            src={getFrameSrc(0)} // Initial frame based on device
             alt="Scroll Animation Frame"
+            loading="eager"
           />
         </div>
-        <h1 ref={textRef} className="lighthouse-text">
-          LIGHTHOUSE APUS
-        </h1>
+
+        {/* Fixed centered text overlay */}
+        <div
+          className={`fixed-text-container ${
+            isScrollComplete ? "final-state" : ""
+          }`}
+          style={{
+            position: "fixed",
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 10,
+            textAlign: "center",
+            pointerEvents: "none",
+          }}
+        >
+          <h1
+            className="lighthouse-text visible"
+            style={{
+              opacity: textOpacity,
+              transition:
+                "opacity 0.3s ease-in-out, transform 0.3s ease-in-out",
+            }}
+          >
+            {text}
+          </h1>
+        </div>
       </section>
+
       {showLoadingOverlay && (
         <div className="loading-overlay fixed inset-0 flex items-center justify-center z-50 miau">
           <span
