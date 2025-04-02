@@ -4,6 +4,8 @@ import "../css/About.css";
 import { about } from "../constants/About";
 import "../css/ReasonsToAttend.css";
 import PageDivider from "./PageDivider";
+import { motion } from "framer-motion"; // Import Framer Motion
+
 const About = () => {
   return (
     <div id="about" className="min-h-screen relative">
@@ -17,17 +19,27 @@ const About = () => {
           <h1 className="reasons-title">About Us</h1>
         </div>
       </div>
-      {/* Cards Section (No Width Change) */}
+      {/* Cards Section with Delayed Animation */}
       <div className="container-about-us">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-8">
           {about.map((card, id) => (
-            <Card
+            <motion.div
               key={id}
-              title={card.title}
-              subtitle={card.subtitle}
-              description={card.description}
-              subdescription={card.subdescription}
-            />
+              initial={{ opacity: 0, y: 50 }} // Start off-screen
+              animate={{ opacity: 1, y: 0 }} // Animate to normal position
+              transition={{
+                duration: 0.5, // Animation duration
+                delay: id * 0.75, // Delay each card by 0.3s
+                ease: "easeOut",
+              }}
+            >
+              <Card
+                title={card.title}
+                subtitle={card.subtitle}
+                description={card.description}
+                subdescription={card.subdescription}
+              />
+            </motion.div>
           ))}
         </div>
       </div>

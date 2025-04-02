@@ -75,6 +75,12 @@ button {
 
 }
 
+.Team-section{
+  padding-top: 7rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
 
 /* Add more spacing on smaller screens */
 @media (max-width: 768px) {
@@ -102,7 +108,9 @@ button {
   margin-bottom: -3rem;
 }
 .Team-section{
-  margin-top: 4rem;
+  padding-top: 7rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
 
 }

@@ -19,6 +19,7 @@
     "html-to-image": "^1.11.13",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.1",
+    "lucide-react": "^0.486.0",
     "npx": "^10.2.2",
     "qrcode.react": "^4.2.0",
     "qrious": "^4.0.2",

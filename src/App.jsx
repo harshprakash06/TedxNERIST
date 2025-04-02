@@ -22,9 +22,11 @@ import {
   HeroPhone,
   ThreeDViewer,
   Form,
+  PeopleSection,
+  SeatReservationForm,
+  StudentRegForm,
 } from "./components/index";
 import "./App.css";
-import url from "./constants/config";
 
 const isPhone = window.innerWidth >= 800;
 
@@ -50,20 +52,22 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/comingsoon" element={<ComingSoon />} />
-        <Route path="/buyticket" element={<TicketPurchase />} />
+        <Route path="/ticket" element={<SeatReservationForm />} />
+        <Route path="/ticket/student" element={<StudentRegForm />} />
         <Route path="/ticket/:id" element={<TicketDownload />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/refund" element={<NoRefundPolicy />} />
         <Route path="/term" element={<TermsAndConditions />} />
         <Route path="/2" element={<Ticket />} />
         <Route path="/form" element={<Form />} />
+
         <Route
           path="/team"
           element={
             <>
               <Navbar />
               <div className="Team-section">
-                <TeamSection />
+                <PeopleSection />
               </div>
 
               <Footer />

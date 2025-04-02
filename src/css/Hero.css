@@ -4,7 +4,7 @@ section.vid video{
   object-fit: cover;
 }
 section.vid {
-  height: 2000px;
+  height: 3000px;
   scroll-behavior: smooth;
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */

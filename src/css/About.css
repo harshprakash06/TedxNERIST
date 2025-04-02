@@ -69,14 +69,14 @@
   z-index: 10; /* Ensures it’s above the PageDivider */
 }
 @media (max-width: 768px) {
-  .about-title{
-    font-size: 3rem
+  .card-title h1{
+    font-size: 1.2rem
   }
   .container-card{
     width: 313px;
   }
   .card-description{
-    font-size: 0.82rem;
+    font-size: 0.73rem;
   }
 
 }

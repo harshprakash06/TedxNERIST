@@ -115,4 +115,82 @@ const Category = [
   { id: 7, name: "CONTENT CURATORS" },
 ];
 
-export { Team, Category };
+const Members = [
+  {
+    name: "Uddipan",
+    role: "Organizer & Licensee",
+    image: "https://picsum.photos/seed/uddipan/200",
+  },
+  {
+    name: "Shivangsh",
+    role: "Co-Organizer",
+    image: "https://picsum.photos/seed/shivangsh/200",
+  },
+  {
+    name: "NBT Sir",
+    role: "Event Director",
+    image: "https://picsum.photos/seed/nbtsir/200",
+  },
+  {
+    name: "Harsh",
+    role: "Head of Operations & DevOps",
+    image: "https://picsum.photos/seed/harsh/200",
+  },
+  {
+    name: "Kalivi",
+    role: "Event Head",
+    image: "https://picsum.photos/seed/kalivi/200",
+  },
+  {
+    name: "Anup",
+    role: "Speaker Head",
+    image: "https://picsum.photos/seed/anup/200",
+  },
+  {
+    name: "Darba",
+    role: "Speaker Head",
+    image: "https://picsum.photos/seed/darba/200",
+  },
+  {
+    name: "Satya",
+    role: "Event Co-Ordinator",
+    image: "https://picsum.photos/seed/satya/200",
+  },
+  {
+    name: "Richard",
+    role: "Event Co-Ordinator",
+    image: "https://picsum.photos/seed/richard/200",
+  },
+  {
+    name: "Biswashreya",
+    role: "Content Curator",
+    image: "https://picsum.photos/seed/biswashreya/200",
+  },
+  {
+    name: "Prayoshi",
+    role: "Content Curator",
+    image: "https://picsum.photos/seed/prayoshi/200",
+  },
+  {
+    name: "Sukanya",
+    role: "Content Curator",
+    image: "https://picsum.photos/seed/sukanya/200",
+  },
+  {
+    name: "Sahin",
+    role: "Social Media Head",
+    image: "https://picsum.photos/seed/sahin/200",
+  },
+  {
+    name: "Shrutasom",
+    role: "Social Media Head",
+    image: "https://picsum.photos/seed/shrutasom/200",
+  },
+  {
+    name: "Sudip",
+    role: "Volunteer Head",
+    image: "https://picsum.photos/seed/sudip/200",
+  },
+];
+
+export { Team, Category, Members };
