@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { ChevronDown, ArrowRight } from "lucide-react";
 
 export default function SeatReservationForm() {
   const [selectedOption, setSelectedOption] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const navigate = useNavigate();
 
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
@@ -18,6 +20,14 @@ export default function SeatReservationForm() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const handleRedirect = () => {
+    if (selectedOption === "student") {
+      navigate("/ticket/student");
+    } else if (selectedOption === "outsider") {
+      navigate("/ticket/buy");
+    }
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-black p-4 sm:p-6 md:p-0">
@@ -59,7 +69,7 @@ export default function SeatReservationForm() {
                 />
               </button>
 
-              {/* Dropdown Options with Animations */}
+              {/* Dropdown Options */}
               <div
                 ref={dropdownRef}
                 className={`absolute w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg z-10 
@@ -95,9 +105,17 @@ export default function SeatReservationForm() {
 
           {/* Bottom Section - Arrow Button */}
           <div className="mb-5 flex justify-center">
-            <div className="bg-black text-white rounded-full p-4 md:p-5 cursor-pointer hover:scale-110 transition-transform duration-200">
+            <button
+              onClick={handleRedirect}
+              disabled={!selectedOption}
+              className={`bg-black! text-white rounded-full p-4 md:p-5 cursor-pointer transition-transform duration-200 ${
+                selectedOption
+                  ? "hover:scale-110"
+                  : "opacity-50 cursor-not-allowed"
+              }`}
+            >
               <ArrowRight size={24} />
-            </div>
+            </button>
           </div>
         </div>
 

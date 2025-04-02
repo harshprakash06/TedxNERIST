@@ -132,7 +132,7 @@ function HeroPhone() {
         changeTextWithTransition("Illuminate the Unknown.");
       } else if (newScrollProgress < 0.5) {
         changeTextWithTransition(
-          "With the brilliance of curiosity and bold innovation at our core, we push the boundaries of what's possible."
+          "Driven by curiosity and bold innovation, we push boundaries."
         );
       } else if (newScrollProgress < 0.75) {
         changeTextWithTransition(
@@ -140,7 +140,7 @@ function HeroPhone() {
         );
       } else {
         changeTextWithTransition(
-          "Every idea sparks a new beginning, paving the way for a future of endless possibilities."
+          "Every idea sparks a new beginning, shaping endless possibilities."
         );
       }
 
@@ -210,21 +210,19 @@ function HeroPhone() {
             }}
           >
             <h1
-              className="lighthouse-text visible"
+              className="lighthouse-text visible  "
               style={{
                 opacity: textOpacity,
                 transition:
                   "opacity 0.3s ease-in-out, transform 0.3s ease-in-out",
                 fontFamily:
-                  text === "Illuminate the Unknown."
-                    ? "Cirka, sans-serif"
-                    : "Gilroy, sans-serif",
+                  text === "Illuminate the Unknown." ? "Cirka" : "Gilroy",
                 fontWeight:
                   text === "Illuminate the Unknown." ? "bold" : "normal",
                 fontSize:
                   text === "Illuminate the Unknown." ||
                   text === "Lighthouse Apus"
-                    ? "5rem"
+                    ? "4rem"
                     : "1.8rem", // Corrected condition
 
                 color:

@@ -22,6 +22,8 @@ import Form from "./Form.jsx";
 import PeopleSection from "./Team/PeopleSection.jsx";
 import SeatReservationForm from "./Form/StudentForm.jsx";
 import StudentRegForm from "./Form/StudentRegForm.jsx";
+import PeopleSectionPhone from "./Team/Phone/PeopleSection.jsx";
+import OutSiderForm from "./Form/OutSiderForm.jsx";
 export {
   TicketPurchase,
   TicketDownload,
@@ -46,4 +48,6 @@ export {
   PeopleSection,
   SeatReservationForm,
   StudentRegForm,
+  PeopleSectionPhone,
+  OutSiderForm,
 };

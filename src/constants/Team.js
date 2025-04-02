@@ -117,44 +117,45 @@ const Category = [
 
 const Members = [
   {
+    name: "Dr. Nabam Teyi",
+    role: "Event Director",
+    image: "https://nerist.ac.in/wp-content/uploads/2024/02/nbt.jpg",
+  },
+  {
     name: "Uddipan",
     role: "Organizer & Licensee",
-    image: "https://picsum.photos/seed/uddipan/200",
+    image: "/images/team/Uddu.png",
   },
   {
     name: "Shivangsh",
     role: "Co-Organizer",
-    image: "https://picsum.photos/seed/shivangsh/200",
+    image: "/images/team/Shiv.jpg",
   },
-  {
-    name: "NBT Sir",
-    role: "Event Director",
-    image: "https://picsum.photos/seed/nbtsir/200",
-  },
+
   {
     name: "Harsh",
     role: "Head of Operations & DevOps",
-    image: "https://picsum.photos/seed/harsh/200",
+    image: "/images/team/Harsh.png",
   },
   {
     name: "Kalivi",
     role: "Event Head",
-    image: "https://picsum.photos/seed/kalivi/200",
+    image: "/images/team/Kalivi.jpg",
   },
   {
     name: "Anup",
     role: "Speaker Head",
-    image: "https://picsum.photos/seed/anup/200",
+    image: "/images/team/Anup.jpg",
   },
   {
     name: "Darba",
     role: "Speaker Head",
-    image: "https://picsum.photos/seed/darba/200",
+    image: "/images/team/Darba.jpg",
   },
   {
-    name: "Satya",
+    name: "Satyaprakash",
     role: "Event Co-Ordinator",
-    image: "https://picsum.photos/seed/satya/200",
+    image: "/images/team/Satya.jpg",
   },
   {
     name: "Richard",
@@ -164,12 +165,12 @@ const Members = [
   {
     name: "Biswashreya",
     role: "Content Curator",
-    image: "https://picsum.photos/seed/biswashreya/200",
+    image: "/images/team/Biswashreya.jpg",
   },
   {
     name: "Prayoshi",
     role: "Content Curator",
-    image: "https://picsum.photos/seed/prayoshi/200",
+    image: "/images/team/Prayoshi.jpg",
   },
   {
     name: "Sukanya",

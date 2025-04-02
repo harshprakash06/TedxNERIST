@@ -15,7 +15,7 @@
     "@mobiscroll/react": "npm:@mobiscroll/react-next-trial@^5.33.2",
     "@react-three/drei": "^10.0.5",
     "@tailwindcss/vite": "^4.0.13",
-    "framer-motion": "^12.5.0",
+    "framer-motion": "^12.6.3",
     "html-to-image": "^1.11.13",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.1",

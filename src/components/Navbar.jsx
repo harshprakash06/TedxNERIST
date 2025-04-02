@@ -94,7 +94,7 @@ const Navbar = () => {
             </nav>
 
             <div className="hidden md:inline-flex items-center">
-              <Link to="/comingsoon" className="custom-button">
+              <Link to="/ticket" className="custom-button">
                 <span className="text">Book Now →</span>
                 <img src={"/arrow.svg"} alt="Arrow" className="arrow-icon" />
               </Link>
@@ -125,7 +125,7 @@ const Navbar = () => {
               </Link>
 
               <div className="relative inline-flex items-center justify-center group">
-                <Link to="/comingsoon" className="custom-button">
+                <Link to="/ticket" className="custom-button">
                   <span className="text">Book Now</span>
                   <img src={"/arrow.svg"} alt="Arrow" className="arrow-icon" />
                 </Link>

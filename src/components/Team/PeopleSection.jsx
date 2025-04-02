@@ -5,10 +5,6 @@ import { Members } from "../../constants/Team.js";
 const PeopleSection = () => {
   return (
     <>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300,400,500,600,700&display=swap"
-      />
       <section className="p-10 mx-auto max-w-none min-h-screen  flex items-start gap-10 max-md:flex-col">
         {/* Left Section (30%) */}
         <div className="w-1/3 max-md:w-full">

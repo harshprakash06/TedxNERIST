@@ -25,6 +25,8 @@ import {
   PeopleSection,
   SeatReservationForm,
   StudentRegForm,
+  PeopleSectionPhone,
+  OutSiderForm,
 } from "./components/index";
 import "./App.css";
 
@@ -51,9 +53,29 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/comingsoon" element={<ComingSoon />} />
-        <Route path="/ticket" element={<SeatReservationForm />} />
-        <Route path="/ticket/student" element={<StudentRegForm />} />
+        <Route path="/ticket/buy" element={<ComingSoon />} />
+        <Route
+          path="/ticket"
+          element={
+            <>
+              <Navbar />
+              <SeatReservationForm />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/ticket/student"
+          element={
+            <div className="student-ticket">
+              <Navbar />
+              <div className="mt-15">
+                <StudentRegForm />
+              </div>
+              <Footer />
+            </div>
+          }
+        />
         <Route path="/ticket/:id" element={<TicketDownload />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/refund" element={<NoRefundPolicy />} />
@@ -67,7 +89,7 @@ function App() {
             <>
               <Navbar />
               <div className="Team-section">
-                <PeopleSection />
+                {isPhone ? <PeopleSection /> : <PeopleSectionPhone />}
               </div>
 
               <Footer />

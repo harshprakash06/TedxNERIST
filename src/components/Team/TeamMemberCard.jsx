@@ -11,8 +11,18 @@ export const TeamMemberCard = ({ name, role, image }) => {
             "https://source.unsplash.com/random/200x200?portrait";
         }}
       />
-      <h2 className="mb-2 text-2xl font-semibold text-white">{name}</h2>
-      <p className="text-sm opacity-70 text-white">{role}</p>
+      <h2
+        className="mb-2 text-2xl font-semibold text-white"
+        style={{ fontFamily: "Cirka", fontWeight: "700" }}
+      >
+        {name}
+      </h2>
+      <p
+        className="text-sm opacity-70 text-white"
+        style={{ fontFamily: "Gilroy-Light" }}
+      >
+        {role}
+      </p>
     </article>
   );
 };

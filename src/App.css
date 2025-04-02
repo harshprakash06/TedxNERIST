@@ -31,8 +31,10 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @import "tailwindcss";
 :root {
+
   --background: #161616;
   --text: #eae9e9;
   --textred: hsl(9, 71%, 44%);
@@ -45,7 +47,7 @@
   --textGilroyM: "Gilroy-Medium";
 }
 body {
-  background-color: #161616;
+  background-color: #1b1b1b;
   color: var(--text);
   font-weight: 400;
 }
@@ -80,6 +82,9 @@ button {
   padding-left: 4rem;
   padding-right: 4rem;
 }
+.student-ticket{
+  background-color: #1b1b1b !;
+}
 
 
 /* Add more spacing on smaller screens */
@@ -99,7 +104,6 @@ button {
   position: relative;
   margin-right: 00px;
   margin-left: 00px;
-
 }
 .sponsor-section{
   margin-top: 10rem;
@@ -108,7 +112,7 @@ button {
   margin-bottom: -3rem;
 }
 .Team-section{
-  padding-top: 7rem;
+  padding-top: 4rem;
   padding-left: 0rem;
   padding-right: 0rem;
 }
