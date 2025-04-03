@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { logPageView } from "./constants/firebaseConfig";
 
 import {
   TicketPurchase,
@@ -27,10 +28,20 @@ import {
   StudentRegForm,
   PeopleSectionPhone,
   OutSiderForm,
+  VideoSection,
 } from "./components/index";
 import "./App.css";
 
 const isPhone = window.innerWidth >= 800;
+function TrackPageViews() {
+  const location = useLocation();
+
+  useEffect(() => {
+    logPageView(location.pathname); // Log page views on route change
+  }, [location]);
+
+  return null;
+}
 
 function SectionWrapper({ children, className }) {
   const ref = useRef(null);
@@ -52,6 +63,7 @@ function SectionWrapper({ children, className }) {
 function App() {
   return (
     <BrowserRouter>
+      <TrackPageViews /> {/* Page views will be tracked on navigation */}
       <Routes>
         <Route path="/ticket/buy" element={<ComingSoon />} />
         <Route
@@ -82,7 +94,6 @@ function App() {
         <Route path="/term" element={<TermsAndConditions />} />
         <Route path="/2" element={<Ticket />} />
         <Route path="/form" element={<Form />} />
-
         <Route
           path="/team"
           element={
@@ -96,7 +107,6 @@ function App() {
             </>
           }
         />
-
         <Route
           path="/"
           element={
@@ -109,6 +119,13 @@ function App() {
                 </>
               )}
               <div className="page-container">
+                <SectionWrapper className="trailer-section">
+                  <VideoSection
+                    videoUrl="https://storage.googleapis.com/maiu/trailer_final.mp4"
+                    thumbnail="/images/thumbnail1.jpg"
+                  />
+                </SectionWrapper>
+
                 <SectionWrapper className="theme-section">
                   <Theme />
                 </SectionWrapper>

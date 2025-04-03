@@ -1,7 +1,6 @@
 import TicketPurchase from "./TicketPurchase.jsx";
 import TicketDownload from "./TicketDownload.jsx";
 import Hero from "./Hero.jsx";
-
 import Navbar from "./Navbar.jsx";
 import Theme from "./Theme.jsx";
 import About from "./About.jsx";
@@ -24,6 +23,7 @@ import SeatReservationForm from "./Form/StudentForm.jsx";
 import StudentRegForm from "./Form/StudentRegForm.jsx";
 import PeopleSectionPhone from "./Team/Phone/PeopleSection.jsx";
 import OutSiderForm from "./Form/OutSiderForm.jsx";
+import VideoSection from "./VideoSection.jsx";
 export {
   TicketPurchase,
   TicketDownload,
@@ -50,4 +50,5 @@ export {
   StudentRegForm,
   PeopleSectionPhone,
   OutSiderForm,
+  VideoSection,
 };

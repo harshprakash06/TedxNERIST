@@ -153,14 +153,14 @@ const Members = [
     image: "/images/team/Darba.jpg",
   },
   {
-    name: "Satyaprakash",
+    name: "Satya",
     role: "Event Co-Ordinator",
     image: "/images/team/Satya.jpg",
   },
   {
     name: "Richard",
     role: "Event Co-Ordinator",
-    image: "https://picsum.photos/seed/richard/200",
+    image: "https://media-club-backend-six.vercel.app/uploads/Richard.jpeg",
   },
   {
     name: "Biswashreya",
@@ -175,12 +175,12 @@ const Members = [
   {
     name: "Sukanya",
     role: "Content Curator",
-    image: "https://picsum.photos/seed/sukanya/200",
+    image: "http://backend.neristmedia.club/uploads/IMG_8789_-_Sukanya_Roy.jpg",
   },
   {
     name: "Sahin",
     role: "Social Media Head",
-    image: "https://picsum.photos/seed/sahin/200",
+    image: "/images/team/Simran.jpeg",
   },
   {
     name: "Shrutasom",
@@ -188,9 +188,9 @@ const Members = [
     image: "https://picsum.photos/seed/shrutasom/200",
   },
   {
-    name: "Sudip",
-    role: "Volunteer Head",
-    image: "https://picsum.photos/seed/sudip/200",
+    name: "Chingkhei",
+    role: "Dev Ops",
+    image: "/images/team/Chingkhei.jpeg",
   },
 ];
 

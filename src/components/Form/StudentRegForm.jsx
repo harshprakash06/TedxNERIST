@@ -129,7 +129,7 @@ export default function StudentRegForm() {
 
   if (submitted) {
     return (
-      <div className="flex items-center justify-center min-h-screen  bg-[#1b1b1b] p-4 sm:p-6 md:p-0">
+      <div className="flex items-center justify-center min-h-screen  bg-[#1b1b1b] p-4 sm:p-6 md:p-0 font-['gilroy']">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -141,7 +141,7 @@ export default function StudentRegForm() {
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-3xl md:text-5xl text-black font-semibold mb-6 md:mb-8"
+              className="text-3xl md:text-5xl text-black font-semibold mb-6 md:mb-8 font-['Cirka']"
             >
               Thank You
             </motion.h2>
@@ -186,7 +186,7 @@ export default function StudentRegForm() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen  bg-[#1b1b1b]! p-4 sm:p-6 md:p-0">
+    <div className="flex items-center justify-center min-h-screen  bg-[#1b1b1b]! p-4 sm:p-6 md:p-0 font-['gilroy']">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -201,7 +201,7 @@ export default function StudentRegForm() {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.4 }}
-            className="text-3xl md:text-5xl text-black font-semibold mb-6 md:mb-8 mt-4 md:mt-6"
+            className="text-3xl md:text-5xl text-black font-semibold mb-6 md:mb-8 mt-4 md:mt-6 font-['Cirka']"
           >
             Student Registration
           </motion.h2>
@@ -247,10 +247,10 @@ export default function StudentRegForm() {
               </AnimatePresence>
             </motion.div>
             {[
-              { name: "email", label: "Institute Email Id", type: "email" },
-              { name: "phone", label: "Phone Number" },
               { name: "name", label: "Name", disabled: true },
               { name: "rollNumber", label: "Roll No.", disabled: true },
+              { name: "email", label: "Email Id", type: "email" },
+              { name: "phone", label: "Phone Number" },
             ].map(({ name, label, type = "text", disabled = false }, index) => (
               <motion.div
                 key={name}

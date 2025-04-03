@@ -30,7 +30,11 @@ const Theme = () => {
             alt="Theme 2025"
             className="h-auto rounded-lg shadow-lg"
           />
-          <ThreeDViewer modelPath="/model/logo.glb" className="h-auto" />
+          <img
+            src="/logo.png"
+            alt="Theme 2025"
+            className=" w-40 justify-center rounded-lg shadow-lg ml-8"
+          />
         </div>
 
         {/* Right Side - Text */}
@@ -64,11 +68,15 @@ const PhoneTheme = () => {
       {/* Image Section */}
       <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4">
         <img
-          src="/images/theme2025.svg"
+          src="/images/theme2025-phone.png"
           alt="Theme 2025"
-          className="w-[40%] sm:w-[40%] h-auto rounded-lg shadow-lg"
+          className="w-[60%] sm:w-[40%] h-auto rounded-lg shadow-lg mb-2"
         />
-        <ThreeDViewer modelPath="/model/logo.glb" className="w-[60%] h-auto " />
+        <img
+          src="/logo.png"
+          alt="Theme 2025"
+          className=" w-40 justify-center rounded-lg shadow-lg"
+        />
       </div>
 
       {/* Text Section */}

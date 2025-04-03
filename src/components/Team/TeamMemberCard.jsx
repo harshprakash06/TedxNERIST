@@ -12,14 +12,14 @@ export const TeamMemberCard = ({ name, role, image }) => {
         }}
       />
       <h2
-        className="mb-2 text-2xl font-semibold text-white"
+        className="mb-2 text-2xl font-semibold text-[#ececec]"
         style={{ fontFamily: "Cirka", fontWeight: "700" }}
       >
         {name}
       </h2>
       <p
-        className="text-sm opacity-70 text-white"
-        style={{ fontFamily: "Gilroy-Light" }}
+        className="text-l opacity-70 text-white"
+        style={{ fontFamily: "Gilroy-Regular", fontWeight: "100" }}
       >
         {role}
       </p>

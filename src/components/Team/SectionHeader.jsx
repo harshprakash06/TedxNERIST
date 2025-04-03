@@ -1,4 +1,4 @@
-export const SectionHeader = ({ title, subtitle }) => {
+export const SectionHeader = ({ title, subtitle, subtitle2 }) => {
   return (
     <header className="mb-10 text-white">
       <h1
@@ -8,14 +8,16 @@ export const SectionHeader = ({ title, subtitle }) => {
         {title}
       </h1>
       <p
-        className="text-xl text-zinc-500 max-sm:text-lg"
+        className="text-3xl text-zinc-500 max-sm:text-lg"
         style={{
           fontFamily: "Gilroy-Regular",
-          fontWeight: "400",
+          fontWeight: "100!",
           color: "#EBEBEB",
         }}
       >
         {subtitle}
+        <br />
+        {subtitle2}
       </p>
     </header>
   );

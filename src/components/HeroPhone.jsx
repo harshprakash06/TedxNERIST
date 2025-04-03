@@ -216,17 +216,17 @@ function HeroPhone() {
                 transition:
                   "opacity 0.3s ease-in-out, transform 0.3s ease-in-out",
                 fontFamily:
-                  text === "Illuminate the Unknown." ? "Cirka" : "Gilroy",
+                  text === "Illuminate the Unknown." ? "Cirka" : "Cirka",
                 fontWeight:
-                  text === "Illuminate the Unknown." ? "bold" : "normal",
+                  text === "Illuminate the Unknown." ? "bold" : "bold",
                 fontSize:
                   text === "Illuminate the Unknown." ||
                   text === "Lighthouse Apus"
                     ? "4rem"
-                    : "1.8rem", // Corrected condition
+                    : "2rem", // Corrected condition
 
                 color:
-                  text === "Illuminate the Unknown." ? "#ffffff" : "#d3d3d3", // White for first text, light gray for others
+                  text === "Illuminate the Unknown." ? "#ececec" : "#ececec", // White for first text, light gray for others
               }}
             >
               {text}

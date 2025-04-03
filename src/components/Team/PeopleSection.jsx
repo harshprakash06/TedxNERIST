@@ -7,10 +7,11 @@ const PeopleSection = () => {
     <>
       <section className="p-10 mx-auto max-w-none min-h-screen  flex items-start gap-10 max-md:flex-col">
         {/* Left Section (30%) */}
-        <div className="w-1/3 max-md:w-full">
+        <div className="w-1/3 max-md:w-full ml-3">
           <SectionHeader
             title="People"
-            subtitle="The great minds behind our event."
+            subtitle="The great minds"
+            subtitle2="behind our event."
           />
         </div>
 

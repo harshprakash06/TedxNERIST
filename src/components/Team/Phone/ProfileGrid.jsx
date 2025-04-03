@@ -9,7 +9,10 @@ const ProfileGrid = () => {
   const emptySlots = totalRows * chunkSize - Members.length; // Calculate placeholders
 
   return (
-    <section className="px-9 pt-9 pb-16 mt-9 w-full text-center bg-neutral-800 rounded-[35px]">
+    <section
+      className="px-9 pt-9 pb-9 mt-9 w-full text-center bg-neutral-800 "
+      style={{ borderRadius: " 35px 0px 0px 0px" }}
+    >
       <div className="grid grid-cols-3 gap-6">
         {Members.map((member, index) => (
           <ProfileCard key={index} {...member} />
