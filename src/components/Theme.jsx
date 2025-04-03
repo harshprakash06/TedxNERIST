@@ -24,16 +24,11 @@ const Theme = () => {
     <>
       <div className="flex flex-col md:flex-row items-start justify-center p-8 text-white mx-0 relative w-full">
         {/* Left Side - Image */}
-        <div className="w-full md:w-[20%] md:absolute top-6 flex flex-col justify-start left-0">
+        <div className="w-full md:w-[15%] md:absolute top-6 flex flex-col justify-start left-0">
           <img
             src="/images/theme2025.svg"
             alt="Theme 2025"
             className="h-auto rounded-lg shadow-lg"
-          />
-          <img
-            src="/logo.png"
-            alt="Theme 2025"
-            className=" w-40 justify-center rounded-lg shadow-lg ml-8"
           />
         </div>
 

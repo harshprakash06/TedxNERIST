@@ -11,8 +11,6 @@ import { Navbar } from "./";
 function HeroPhone() {
   const imageRef = useRef(null);
   const sectionRef = useRef(null);
-  const totalFrames = 60;
-  const images = useRef(new Array(totalFrames).fill(null));
 
   const [loadProgress, setLoadProgress] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -26,6 +24,8 @@ function HeroPhone() {
     () => /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent),
     []
   );
+  const totalFrames = isMobile ? 90 : 90;
+  const images = useRef(new Array(totalFrames).fill(null));
 
   const getFrameSrc = useCallback(
     (index) =>
@@ -34,7 +34,9 @@ function HeroPhone() {
             2,
             "0"
           )}.jpg`
-        : `/images/animation/intro${String(index).padStart(2, "0")}.jpg`,
+        : `https://storage.googleapis.com/maiu/image/intro${String(
+            index
+          ).padStart(2, "0")}.jpg`,
     [isMobile]
   );
 
@@ -223,7 +225,9 @@ function HeroPhone() {
                   text === "Illuminate the Unknown." ||
                   text === "Lighthouse Apus"
                     ? "4rem"
-                    : "2rem", // Corrected condition
+                    : window.innerWidth >= 700
+                    ? "2.5rem"
+                    : "1.4rem",
 
                 color:
                   text === "Illuminate the Unknown." ? "#ececec" : "#ececec", // White for first text, light gray for others

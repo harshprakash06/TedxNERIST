@@ -25,7 +25,7 @@ export default function SeatReservationForm() {
     if (selectedOption === "student") {
       navigate("/ticket/student");
     } else if (selectedOption === "outsider") {
-      navigate("/ticket/buy");
+      window.location.href = "https://unstop.com/o/0Ydpo63?lb=ldONFEXj";
     }
   };
 

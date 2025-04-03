@@ -65,7 +65,7 @@ function App() {
     <BrowserRouter>
       <TrackPageViews /> {/* Page views will be tracked on navigation */}
       <Routes>
-        <Route path="/ticket/buy" element={<ComingSoon />} />
+        <Route path="/ticket/buy" element={<OutSiderForm />} />
         <Route
           path="/ticket"
           element={
@@ -88,6 +88,7 @@ function App() {
             </div>
           }
         />
+
         <Route path="/ticket/:id" element={<TicketDownload />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/refund" element={<NoRefundPolicy />} />
