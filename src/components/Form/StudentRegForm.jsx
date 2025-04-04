@@ -103,8 +103,9 @@ export default function StudentRegForm() {
 
     setSubmitLoading(true);
     setSubmitMessage("");
+
     try {
-      const response = await fetch(
+      const studentResponse = await fetch(
         "https://node-service-dot-splirx.as.r.appspot.com/api/student",
         {
           method: "POST",
@@ -115,15 +116,57 @@ export default function StudentRegForm() {
         }
       );
 
-      const data = await response.json();
-      if (response.ok) {
-        setSubmitted(true);
+      const studentData = await studentResponse.json();
+
+      if (studentResponse.ok) {
+        const ticketPayload = {
+          name: formData.name,
+          email: formData.email,
+          admin_name: "harsh",
+          amount: 300,
+        };
+
+        const ticketResponse = await fetch(
+          "https://splirx.as.r.appspot.com/api/ticket/create",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(ticketPayload),
+          }
+        );
+
+        const ticketData = await ticketResponse.json();
+
+        if (ticketResponse.ok) {
+          setSubmitted(true);
+          const submissionResponse = await fetch(
+            "https://node-service-dot-splirx.as.r.appspot.com/api/submission",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                "Participant's Name": formData.name,
+                link: `https://ticket.tedxnerist.com/ticekt?ticket=${ticketData.ticket}`,
+                email: formData.email,
+              }),
+            }
+          );
+
+          await submissionResponse.json();
+        } else {
+          setSubmitMessage(ticketData.message || "Ticket creation failed.");
+        }
       } else {
-        setSubmitMessage(data.message || "Failed to submit form.");
+        setSubmitMessage(studentData.message || "Failed to submit form.");
       }
     } catch (error) {
       setSubmitMessage("Error submitting form.");
     }
+
     setSubmitLoading(false);
   };
 

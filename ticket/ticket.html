@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Download</title>
+    <link rel="stylesheet" href="TicketDownload.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.10.8/html-to-image.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> <!-- QR Code Library -->
+    <style>
+        /* Ensure page loads as a whole and prevents incomplete rendering */
+        body {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body class="ticket-page">
+    <div id="ticket-container" class="ticket-container">
+        <div class="ticket">
+            <img class="ticket-image" src="ticketdown.png" alt="Ticket" crossorigin="anonymous">
+            
+            <div class="ticket-id-wrapper">
+                <p id="ticket-id" class="ticket-id">Loading...</p>
+                <div id="qrcode" class="qrcode"></div> 
+            </div>
+        </div>
+    </div>
+    
+    <button id="download-btn" class="download-btn" style="display: none;" onclick="htmlToImageConvert()">Download Ticket</button>
+
+    <script>
+        const url = "https://splirx.as.r.appspot.com"; // Set this to your backend URL
+
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        async function fetchTicketData(ticketId) {
+            try {
+                const response = await fetch(`${url}/api/ticket/get/${ticketId}`);
+                if (!response.ok) throw new Error("Ticket not found");
+
+                const data = await response.json();
+                document.getElementById('ticket-id').textContent = data.ticketNumber || ticketId;
+
+                generateQRCode(data.ticketId || ticketId);
+
+                console.log("Ticket loaded successfully!", data);
+
+                setTimeout(() => {
+                    document.body.style.visibility = "visible"; // Show the page after full load
+                    htmlToImageConvert(); // Auto-download after full page load
+                }, 500);
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById('ticket-id').textContent = "Invalid Ticket";
+                alert("Internal Error: " + error.message);
+            }
+        }
+
+        window.onload = function () {
+            const ticketId = getQueryParam('ticket');
+            if (ticketId) {
+                fetchTicketData(ticketId);
+            } else {
+                document.getElementById('ticket-id').textContent = "No Ticket ID Provided";
+                alert("No Ticket ID Provided");
+                document.body.style.visibility = "visible"; // Ensure page is visible even on error
+            }
+        };
+
+        function generateQRCode(ticketId) {
+    const qrElement = document.getElementById("qrcode");
+    qrElement.innerHTML = ""; // Clear previous QR
+
+    const ticketWidth = document.querySelector('.ticket').offsetWidth;
+    const qrSize = window.innerWidth < 720 ? ticketWidth * 0.1: ticketWidth * 0.1;
+
+    new QRCode(qrElement, {
+        text: `${url}/ticket/${ticketId}`,
+        width: qrSize,
+        height: qrSize
+    });
+}
+
+
+        function htmlToImageConvert() {
+            const ticketElement = document.getElementById("ticket-container");
+            htmlToImage.toPng(ticketElement, { cacheBust: false })
+                .then((dataUrl) => {
+                    const link = document.createElement("a");
+                    link.download = "ticket.png";
+                    link.href = dataUrl;
+                    link.click();
+                })
+                .catch((err) => {
+                    console.error("Error generating image:", err);
+                    alert("Failed to generate the ticket image.");
+                });
+        }
+    </script>
+</body>
+</html>

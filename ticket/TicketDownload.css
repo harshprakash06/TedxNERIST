@@ -1,0 +1,54 @@
+.ticket-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full page height */
+}
+
+.ticket {
+  width: 90vw;  /* Responsive width */
+  max-width: 600px; /* Prevents it from being too big */
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.ticket-image {
+  display: block;
+  width: 100%;
+}
+
+.qrcode {
+  position: absolute;
+  bottom: 5.4%; /* Keeps QR inside ticket */
+  right: -2%;  /* Prevents overlap */
+  width: 10vw;  /* Scales with screen size */
+  max-width: 100px; /* Ensures visibility */
+  height: auto; /* Keeps aspect ratio */
+}
+
+.ticket-id {
+  position: absolute;
+  top: 14%;
+  right: -4%;
+  color: black;
+  transform: rotate(270deg);
+  white-space: nowrap;
+  font-family: Gilroy-Medium, sans-serif;
+  font-size: 1vw; /* Scales across devices */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .qrcode {
+    width: 15vw; /* Adjusts size for smaller screens */
+    max-width: 80px; /* Limits size */
+    bottom: 7%; /* Adjusts QR placement */
+    right: -1%;
+  }
+
+  .ticket-id {
+    font-size: 1.5vw; /* Makes text readable on small screens */
+    right: -2.6%;
+  }
+}
