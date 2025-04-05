@@ -11,7 +11,6 @@ const Speaker = ({}) => {
           </div>
         </div>
       </div>
-      <div className="rectangle"></div>
     </div>
   );
 };

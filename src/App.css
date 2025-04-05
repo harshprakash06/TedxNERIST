@@ -138,5 +138,15 @@ button {
 margin-top: 10rem;
 }
 .ticket-sections{
-  margin-bottom: 10rem;
+  margin-bottom: 15rem;
+}
+
+@media (max-width: 768px) {
+
+  .ticket-sections{
+    margin-bottom: 7rem;
+  }
+  .speaker-section{
+    margin-bottom: 5rem;
+  }
 }

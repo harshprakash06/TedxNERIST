@@ -21,6 +21,40 @@
     margin: 0 auto; /* Centers horizontally */
   }
 
+  .book-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    
+  }
+  
+  .book-button {
+    background-color: #ff4757;
+    font-family: 'Gilroy-Regular';
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+  }
+  
+  .book-button:hover {
+    background-color: #ff6b81;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 71, 87, 0.5);
+
+  }
+  
+  .book-button:active {
+    transform: translateY(1px);
+  }
+
   @media (max-width: 768px) {
     .ticket-container {
       display: flex;
@@ -30,5 +64,10 @@
       height:8vh; /* Full viewport height */
       
     }
+    .book-button {
+      padding: 12px 30px;
+      font-size: 1rem;
+    }
 
   }
+

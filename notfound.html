@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | TEDxNERIST</title>
+  <style>
+    @font-face {
+      font-family: "Gilroy";
+      src: url("/fonts/Gilroy-Bold.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: "Gilroy-Medium";
+      src: url("/fonts/Gilroy-Medium.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: "Gilroy-Regular";
+      src: url("/fonts/Gilroy-Regular.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: "Cirka";
+      src: url("/fonts/PPCirka-Variable.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: "OverpassMono";
+      src: url("/fonts/OverpassMono.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    :root {
+      --background: #161616;
+      --text: #eae9e9;
+      --textred: hsl(9, 71%, 44%);
+      --tedxred: #eb0028;
+      --textabout: "#200409";
+      --titlefont: "OverpassMono";
+      --headerfont: "Gilroy";
+      --textfont: "Cirka";
+      --textGilroyR: "Gilroy-Regular";
+      --textGilroyM: "Gilroy-Medium";
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #1b1b1b;
+      color: var(--text);
+      font-weight: 400;
+      font-family: var(--textfont), sans-serif;
+      line-height: 1.6;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .error-container {
+      text-align: center;
+      background-color: var(--background);
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .logo {
+      margin-bottom: 30px;
+    }
+    
+    .ted-logo {
+      color: var(--tedxred);
+      font-family: var(--headerfont), sans-serif;
+      font-weight: bold;
+      font-size: 72px;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    
+    .ted-logo span {
+      font-size: 28px;
+      position: absolute;
+      bottom: 15px;
+      letter-spacing: 0;
+    }
+    
+    .nerist-text {
+      font-family: var(--titlefont), monospace;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    
+    .error-code {
+      font-family: var(--titlefont), monospace;
+      font-size: 120px;
+      font-weight: bold;
+      line-height: 1;
+      color: var(--tedxred);
+      margin-bottom: 20px;
+    }
+    
+    .error-title {
+      font-family: var(--textGilroyM), sans-serif;
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    
+    .error-message {
+      font-family: var(--textGilroyR), sans-serif;
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: var(--text);
+      opacity: 0.8;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--tedxred);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 3px;
+      text-decoration: none;
+      font-family: var(--textGilroyM), sans-serif;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      background-color: hsl(351, 100%, 30%);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(235, 0, 40, 0.3);
+    }
+    
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      color: var(--text);
+      opacity: 0.6;
+      font-family: var(--textGilroyR), sans-serif;
+      font-size: 14px;
+    }
+    
+    .animated {
+      animation: fadeInUp 0.8s both;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .page-container {
+      position: relative;
+      margin-right: 80px;
+      margin-left: 80px;
+    }
+    
+    /* Add responsive styles */
+    @media (max-width: 768px) {
+      .error-code {
+        font-size: 80px;
+      }
+      
+      .error-title {
+        font-size: 28px;
+      }
+      
+      .error-message {
+        font-size: 16px;
+      }
+      
+      .error-container {
+        padding: 30px 20px;
+      }
+      
+      .ted-logo {
+        font-size: 56px;
+      }
+      
+      .ted-logo span {
+        font-size: 22px;
+        bottom: 10px;
+      }
+      
+      .page-container {
+        position: relative;
+        margin-right: 0px;
+        margin-left: 0px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <div class="container">
+      <div class="error-container animated">
+        <div class="logo">
+          <div class="ted-logo">TED<span>x</span></div>
+          <div class="nerist-text">NERIST</div>
+        </div>
+        
+        <div class="error-code">404</div>
+        <h1 class="error-title">This idea hasn't spread yet</h1>
+        <p class="error-message">
+          The page you're looking for seems to be on a different stage. Perhaps it's preparing for its own TED talk?
+        </p>
+        
+        <div class="actions">
+          <a href="/" class="btn">Return to Home</a>
+          <a href="/events" class="btn">See Our Events</a>
+        </div>
+      </div>
+      
+      <div class="footer">
+        <p>TEDxNERIST &copy; 2025 • This independent TEDx event is operated under license from TED</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

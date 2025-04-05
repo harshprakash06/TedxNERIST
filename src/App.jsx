@@ -5,20 +5,16 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import { logPageView } from "./constants/firebaseConfig";
 
 import {
-  TicketPurchase,
-  TicketDownload,
+  NotFoundPage,
   Hero,
   Navbar,
   Theme,
   About,
   ReasonsToAttend,
   Footer,
-  PageDivider,
   PrivacyPolicy,
   NoRefundPolicy,
   TermsAndConditions,
-  TeamSection,
-  Ticket,
   TicketSection,
   HeroPhone,
   ThreeDViewer,
@@ -27,8 +23,8 @@ import {
   SeatReservationForm,
   StudentRegForm,
   PeopleSectionPhone,
-  OutSiderForm,
   VideoSection,
+  Test,
 } from "./components/index";
 import "./App.css";
 
@@ -65,7 +61,7 @@ function App() {
     <BrowserRouter>
       <TrackPageViews /> {/* Page views will be tracked on navigation */}
       <Routes>
-        <Route path="/ticket/buy" element={<OutSiderForm />} />
+        <Route path="*" element={<NotFoundPage />} />
         <Route
           path="/ticket"
           element={
@@ -89,11 +85,10 @@ function App() {
           }
         />
 
-        <Route path="/ticket/:id" element={<TicketDownload />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/refund" element={<NoRefundPolicy />} />
         <Route path="/term" element={<TermsAndConditions />} />
-        <Route path="/2" element={<Ticket />} />
+
         <Route path="/form" element={<Form />} />
         <Route
           path="/team"
@@ -137,6 +132,9 @@ function App() {
                   <About id="about" />
                 </SectionWrapper>
               </div>
+              <SectionWrapper className="speaker-section mt-32">
+                <Test id="speaker" />
+              </SectionWrapper>
               <SectionWrapper className="reasons-section">
                 <ReasonsToAttend />
               </SectionWrapper>

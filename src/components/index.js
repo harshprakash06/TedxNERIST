@@ -24,6 +24,9 @@ import StudentRegForm from "./Form/StudentRegForm.jsx";
 import PeopleSectionPhone from "./Team/Phone/PeopleSection.jsx";
 import OutSiderForm from "./Form/OutSiderForm.jsx";
 import VideoSection from "./VideoSection.jsx";
+import NotFoundPage from "./404.jsx";
+import SpeakerInfo from "./SpeakerInfo.jsx";
+import Test from "./TestSpeaker.jsx";
 export {
   TicketPurchase,
   TicketDownload,
@@ -51,4 +54,7 @@ export {
   PeopleSectionPhone,
   OutSiderForm,
   VideoSection,
+  NotFoundPage,
+  SpeakerInfo,
+  Test,
 };

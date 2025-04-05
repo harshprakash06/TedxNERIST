@@ -88,7 +88,7 @@ export default function SeatReservationForm() {
                     setIsDropdownOpen(false);
                   }}
                 >
-                  Student
+                  NERIST Student
                 </div>
                 <div
                   className="w-full p-4 text-l text-black text-center cursor-pointer hover:bg-black hover:text-white rounded-lg transition-all duration-200"

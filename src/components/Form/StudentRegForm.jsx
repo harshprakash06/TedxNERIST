@@ -127,7 +127,7 @@ export default function StudentRegForm() {
         };
 
         const ticketResponse = await fetch(
-          "https://splirx.as.r.appspot.com/api/ticket/create",
+          "https://tedx-backend-java-dot-splirx.as.r.appspot.com/api/ticket/create",
           {
             method: "POST",
             headers: {
@@ -150,7 +150,7 @@ export default function StudentRegForm() {
               },
               body: JSON.stringify({
                 "Participant's Name": formData.name,
-                link: `https://ticket.tedxnerist.com/ticekt?ticket=${ticketData.ticket}`,
+                link: `https://ticket.tedxnerist.com/ticket.html?ticket=${ticketData.ticket}`,
                 email: formData.email,
               }),
             }
@@ -192,7 +192,7 @@ export default function StudentRegForm() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="text-gray-700 text-sm md:text-base"
+              className="text-gray-700 text-left text-sm md:text-base"
             >
               Thank you for registering for TEDx NERIST! Please remember to
               bring your student ID for entry verification. The event will take
