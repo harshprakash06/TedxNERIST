@@ -14,7 +14,7 @@ function HeroPhone() {
 
   const [loadProgress, setLoadProgress] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [text, setText] = useState("Illuminate the Unknown.");
+  const [text, setText] = useState("Illuminate the Unknown");
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isScrollComplete, setIsScrollComplete] = useState(false);
   const [textOpacity, setTextOpacity] = useState(1);
@@ -131,18 +131,18 @@ function HeroPhone() {
       if (newScrollProgress > 0.85) {
         changeTextWithTransition("Lighthouse Apus");
       } else if (newScrollProgress < 0.25) {
-        changeTextWithTransition("Illuminate the Unknown.");
+        changeTextWithTransition("Illuminate the Unknown");
       } else if (newScrollProgress < 0.5) {
         changeTextWithTransition(
-          "Driven by curiosity and bold innovation, we push boundaries."
+          "Driven by curiosity and bold innovation, we push boundaries"
         );
       } else if (newScrollProgress < 0.75) {
         changeTextWithTransition(
-          "We explore the unknown with passion and a spirit of adventure."
+          "We explore the unknown with passion and a spirit of adventure"
         );
       } else {
         changeTextWithTransition(
-          "Every idea sparks a new beginning, shaping endless possibilities."
+          "Every idea sparks a new beginning, shaping endless possibilities"
         );
       }
 
@@ -218,11 +218,10 @@ function HeroPhone() {
                 transition:
                   "opacity 0.3s ease-in-out, transform 0.3s ease-in-out",
                 fontFamily:
-                  text === "Illuminate the Unknown." ? "Cirka" : "Cirka",
-                fontWeight:
-                  text === "Illuminate the Unknown." ? "bold" : "bold",
+                  text === "Illuminate the Unknown" ? "Cirka" : "Cirka",
+                fontWeight: text === "Illuminate the Unknown" ? "bold" : "bold",
                 fontSize:
-                  text === "Illuminate the Unknown." ||
+                  text === "Illuminate the Unknown" ||
                   text === "Lighthouse Apus"
                     ? "4rem"
                     : window.innerWidth >= 700
@@ -230,7 +229,7 @@ function HeroPhone() {
                     : "1.4rem",
 
                 color:
-                  text === "Illuminate the Unknown." ? "#ececec" : "#ececec", // White for first text, light gray for others
+                  text === "Illuminate the Unknown" ? "#ececec" : "#ececec", // White for first text, light gray for others
               }}
             >
               {text}

@@ -185,7 +185,7 @@ const Members = [
   {
     name: "Shrutasom",
     role: "Social Media Head",
-    image: "https://picsum.photos/seed/shrutasom/200",
+    image: "/images/team/Su.jpg",
   },
   {
     name: "Chingkhei",

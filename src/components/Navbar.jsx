@@ -4,13 +4,6 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
 
-  const navItems = [
-    { label: "Home", href: "/" },
-    { label: "Speakers", href: "/speakers" },
-    { label: "Team", href: "/team" },
-    { label: "Support", href: "/support" },
-    { label: "nn", href: "/support" },
-  ];
   function isPhone() {
     return screen.width <= 800;
   }
@@ -91,6 +84,12 @@ const Navbar = () => {
               >
                 Team
               </Link>
+              <Link
+                to="/contact"
+                className="block text-base font-normal text-gray-400 transition-all duration-200 hover:text-white "
+              >
+                Contact
+              </Link>
             </nav>
 
             <div className="hidden md:inline-flex items-center">
@@ -123,12 +122,19 @@ const Navbar = () => {
               >
                 Team
               </Link>
+              <Link
+                to="/contact"
+                className="block text-base font-normal text-gray-400 transition-all duration-200 hover:text-white "
+              >
+                Contact
+              </Link>
 
               <div className="relative inline-flex items-center justify-center group">
                 <Link to="/ticket" className="custom-button">
                   <span className="text">Book Now</span>
                   <img src={"/arrow.svg"} alt="Arrow" className="arrow-icon" />
                 </Link>
+
                 {/* <button className="custom-button" onClick={tempButtonClick}>
                   <span className="text">Book Now</span>
                   <img src={"/arrow.svg"} alt="Arrow" className="arrow-icon" />

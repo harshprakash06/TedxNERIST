@@ -245,6 +245,9 @@ function Footer() {
             <a href="/term">
               <span>Terms</span>
             </a>
+            <a href="/contact">
+              <span>Contact</span>
+            </a>
           </div>
         </div>
       </div>

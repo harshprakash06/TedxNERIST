@@ -27,6 +27,7 @@ import VideoSection from "./VideoSection.jsx";
 import NotFoundPage from "./404.jsx";
 import SpeakerInfo from "./SpeakerInfo.jsx";
 import Test from "./TestSpeaker.jsx";
+import ContactUs from "./ContactUs.jsx";
 export {
   TicketPurchase,
   TicketDownload,
@@ -57,4 +58,5 @@ export {
   NotFoundPage,
   SpeakerInfo,
   Test,
+  ContactUs,
 };

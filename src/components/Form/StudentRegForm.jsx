@@ -160,6 +160,8 @@ export default function StudentRegForm() {
         } else {
           setSubmitMessage(ticketData.message || "Ticket creation failed.");
         }
+      } else if (studentResponse.status === 409) {
+        setSubmitMessage("You are already registered.");
       } else {
         setSubmitMessage(studentData.message || "Failed to submit form.");
       }
@@ -411,7 +413,7 @@ export default function StudentRegForm() {
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="w-full md:w-1/2 mt-6 md:mt-0"
+          className="w-full md:w-1/2 mt-6 md:mt-0 md:block hidden"
         >
           <img
             src="/images/Form.png"

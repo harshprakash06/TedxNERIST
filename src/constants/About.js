@@ -3,9 +3,10 @@ export const about = [
     title: "TEDx",
     subtitle: "NERIST",
     description:
-      "Lighthouse Apus embodies a radiant beacon, illuminating pathways toward imaginative discovery and guiding explorers through uncharted realms with clarity and purpose. ",
+      "TEDxNERIST is an independently organized TEDx event held at NERIST, Arunachal Pradesh, celebrating local voices and global ideas through inspiring talks and performances.",
+
     subdescription:
-      "Lighthouse Apus illuminates paths to discovery, guiding explorers with clarity, purpose, and inspiration through uncharted realms of imagination and innovation.",
+      "With powerful themes like 'Lighthouse Apus' and a lineup of inspiring speakers from diverse backgrounds, TEDxNERIST fosters creativity, dialogue, and visionary thinking in the Northeast region of India and connects it to the global TEDx movement.",
   },
   {
     title: "TED",

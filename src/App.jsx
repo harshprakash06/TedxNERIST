@@ -25,6 +25,7 @@ import {
   PeopleSectionPhone,
   VideoSection,
   Test,
+  ContactUs,
 } from "./components/index";
 import "./App.css";
 
@@ -61,6 +62,18 @@ function App() {
     <BrowserRouter>
       <TrackPageViews /> {/* Page views will be tracked on navigation */}
       <Routes>
+        <Route
+          path="/contact"
+          element={
+            <>
+              <Navbar />
+              <div className="mt-8">
+                <ContactUs />
+              </div>
+              <Footer />
+            </>
+          }
+        />
         <Route path="*" element={<NotFoundPage />} />
         <Route
           path="/ticket"
@@ -77,7 +90,7 @@ function App() {
           element={
             <div className="student-ticket">
               <Navbar />
-              <div className="mt-15">
+              <div className="mt-20">
                 <StudentRegForm />
               </div>
               <Footer />
@@ -132,9 +145,9 @@ function App() {
                   <About id="about" />
                 </SectionWrapper>
               </div>
-              <SectionWrapper className="speaker-section mt-32">
+              {/* <SectionWrapper className="speaker-section mt-32">
                 <Test id="speaker" />
-              </SectionWrapper>
+              </SectionWrapper> */}
               <SectionWrapper className="reasons-section">
                 <ReasonsToAttend />
               </SectionWrapper>
