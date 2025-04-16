@@ -7,9 +7,6 @@ const Navbar = () => {
   function isPhone() {
     return screen.width <= 800;
   }
-  const tempButtonClick = () => {
-    alert("Tickets are not open yet");
-  };
   return (
     <>
       {/* Navbar */}

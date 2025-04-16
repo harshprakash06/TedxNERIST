@@ -28,6 +28,7 @@ import NotFoundPage from "./404.jsx";
 import SpeakerInfo from "./SpeakerInfo.jsx";
 import Test from "./TestSpeaker.jsx";
 import ContactUs from "./ContactUs.jsx";
+import FeedbackForm from "./Feedback.jsx";
 export {
   TicketPurchase,
   TicketDownload,
@@ -59,4 +60,5 @@ export {
   SpeakerInfo,
   Test,
   ContactUs,
+  FeedbackForm,
 };

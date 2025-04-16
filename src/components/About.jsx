@@ -4,7 +4,7 @@ import "../css/About.css";
 import { about } from "../constants/About";
 import "../css/ReasonsToAttend.css";
 import PageDivider from "./PageDivider";
-import { motion, useAnimation } from "framer-motion"; // Import useAnimation instead
+import { motion, useAnimation } from "framer-motion";
 
 const About = () => {
   return (

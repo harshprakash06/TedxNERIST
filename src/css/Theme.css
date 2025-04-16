@@ -16,3 +16,9 @@
   width: 1.5rem;
   height: 1.5rem;
 }
+
+
+.moded-text{
+  justify-items: center;
+  text-align: justify !important;
+}

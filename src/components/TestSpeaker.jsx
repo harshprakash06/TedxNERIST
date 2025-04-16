@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import speakers from "../constants/Speakers.js";
 import SpeakerInfo from "./SpeakerInfo.jsx";
 
-const Card = ({ id, bio, name, image, index, onClick }) => {
+const Card = ({ id, dis, name, image, index, onClick }) => {
   const [originalFirst, originalLast] = name.split(" ");
   const firstName = originalFirst;
   const lastName = originalLast === "Pratap" ? "Kanwar" : originalLast;
@@ -28,7 +28,7 @@ const Card = ({ id, bio, name, image, index, onClick }) => {
         <p className="text-xl font-serif">
           {firstName} {lastName}
         </p>
-        <p className="text-sm italic opacity-80">{lastName}</p>
+        <p className="text-sm italic opacity-80">{dis}</p>
       </div>
     </motion.div>
   );
@@ -55,6 +55,7 @@ const Test = () => {
             image={item.image}
             bio={item.bio}
             index={index}
+            dis={item.description}
             onClick={() => setSelectedSpeakerId(item.id)}
           />
         ))}

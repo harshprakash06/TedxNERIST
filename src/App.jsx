@@ -26,6 +26,7 @@ import {
   VideoSection,
   Test,
   ContactUs,
+  FeedbackForm,
 } from "./components/index";
 import "./App.css";
 
@@ -75,34 +76,12 @@ function App() {
           }
         />
         <Route path="*" element={<NotFoundPage />} />
-        <Route
-          path="/ticket"
-          element={
-            <>
-              <Navbar />
-              <SeatReservationForm />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/ticket/student"
-          element={
-            <div className="student-ticket">
-              <Navbar />
-              <div className="mt-20">
-                <StudentRegForm />
-              </div>
-              <Footer />
-            </div>
-          }
-        />
 
+        <Route path="/feedback" element={<FeedbackForm />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/refund" element={<NoRefundPolicy />} />
         <Route path="/term" element={<TermsAndConditions />} />
 
-        <Route path="/form" element={<Form />} />
         <Route
           path="/team"
           element={
@@ -145,9 +124,9 @@ function App() {
                   <About id="about" />
                 </SectionWrapper>
               </div>
-              {/* <SectionWrapper className="speaker-section mt-32">
+              <SectionWrapper className="speaker-section mt-32">
                 <Test id="speaker" />
-              </SectionWrapper> */}
+              </SectionWrapper>
               <SectionWrapper className="reasons-section">
                 <ReasonsToAttend />
               </SectionWrapper>

@@ -119,7 +119,7 @@ const Members = [
   {
     name: "Dr. Nabam Teyi",
     role: "Event Director",
-    image: "https://nerist.ac.in/wp-content/uploads/2024/02/nbt.jpg",
+    image: "/images/team/NBT.jpg",
   },
   {
     name: "Uddipan",
