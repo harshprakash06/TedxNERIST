@@ -132,15 +132,15 @@ function HeroPhone() {
         changeTextWithTransition("Illuminate the Unknown!");
       } else if (newScrollProgress < 0.5) {
         changeTextWithTransition(
-          "Driven by curiosity and bold innovation, we push boundaries..."
+          "Driven by curiosity and bold innovation, we push boundaries."
         );
       } else if (newScrollProgress < 0.75) {
         changeTextWithTransition(
-          "We explore the unknown with passion and a spirit of adventure..."
+          "We explore the unknown with passion and a spirit of adventure."
         );
       } else {
         changeTextWithTransition(
-          "Every idea sparks a new beginning, shaping endless possibilities..."
+          "Every idea sparks a new beginning, shaping endless possibilities."
         );
       }
 
