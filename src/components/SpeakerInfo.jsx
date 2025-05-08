@@ -15,6 +15,12 @@ export default function SpeakerInfo({ speakerId, onClose }) {
 
   if (!selectedSpeaker) return null;
 
+  const handleWatchNow = () => {
+    if (selectedSpeaker.link) {
+      window.open(selectedSpeaker.link, "_blank");
+    }
+  };
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
@@ -58,6 +64,24 @@ export default function SpeakerInfo({ speakerId, onClose }) {
             <p className="text-base text-gray-400 font-medium">
               {selectedSpeaker.description || "No description available."}
             </p>
+
+            {/* Watch Now Button - Only show if link exists */}
+            {selectedSpeaker.link && (
+              <button
+                onClick={handleWatchNow}
+                className="mt-4 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-3 transition-all duration-300 shadow-lg hover:shadow-red-500/30 transform hover:-translate-y-1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778C2.036 8.746 2 10.801 2 12c0 1.198.036 3.254.403 4.795.21.87.905 1.565 1.763 1.775 1.582.43 7.83.43 7.83.43s6.265.007 7.831-.403a2.51 2.51 0 0 0 1.767-1.763C22.036 15.254 22 13.199 22 12c0-1.2-.036-3.254-.407-4.797zm-11.592 7.797V9l5.195 3-5.195 3z" />
+                </svg>
+                Watch Now
+              </button>
+            )}
           </section>
 
           {/* Speaker Bio Section */}

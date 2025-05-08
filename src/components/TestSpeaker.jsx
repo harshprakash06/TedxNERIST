@@ -3,7 +3,6 @@ import PageDivider from "./PageDivider";
 import { motion } from "framer-motion";
 import speakers from "../constants/Speakers.js";
 import SpeakerInfo from "./SpeakerInfo.jsx";
-
 const Card = ({ id, dis, name, image, index, onClick }) => {
   const [originalFirst, originalLast] = name.split(" ");
   const firstName = originalFirst;
