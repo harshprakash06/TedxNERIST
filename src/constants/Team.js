@@ -135,7 +135,7 @@ const Members = [
   {
     name: "Harsh",
     role: "Head of Operations & DevOps",
-    image: "/images/team/Harsh.png",
+    image: "https://backend.neristmedia.club/uploads/Harsh.jpeg",
   },
   {
     name: "Kalivi",
